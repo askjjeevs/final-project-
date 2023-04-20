@@ -1,0 +1,44 @@
+[
+    {
+      "address_id": 1,
+      "created_by": 1,
+      "activity_name": "Yoga Class",
+      "activity_type": "Fitness",
+      "activity_date": "2023-05-10",
+      "activity_description": "A beginner yoga class for those looking to improve flexibility and balance."
+    },
+    {
+      "address_id": 2,
+      "created_by": 2,
+      "activity_name": "Cooking Class",
+      "activity_type": "Culinary",
+      "activity_date": "2023-05-15",
+      "activity_description": "Learn to make delicious and healthy meals from a professional chef."
+    },
+    {
+      "address_id": 3,
+      "created_by": 3,
+      "activity_name": "Painting Workshop",
+      "activity_type": "Art",
+      "activity_date": "2023-05-20",
+      "activity_description": "Explore your creativity and learn painting techniques with a local artist."
+    },
+    {
+      "address_id": 4,
+      "created_by": 4,
+      "activity_name": "Hiking Group",
+      "activity_type": "Fitness",
+      "activity_date": "2023-05-25",
+      "activity_description": "Join a group of outdoor enthusiasts for a scenic hike in the mountains."
+    },
+    {
+      "address_id": 5,
+      "created_by": 5,
+      "activity_name": "Book Club",
+      "activity_type": "Literature",
+      "activity_date": "2023-06-01",
+      "activity_description": "Discuss the latest bestseller and connect with other book lovers in your community."
+    }
+    
+    
+]

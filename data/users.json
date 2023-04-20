@@ -1,0 +1,42 @@
+[
+    {
+    "username": "jdoe",
+    "email": "jdoe@example.com",
+    "password": "password123",
+    "fname": "John",
+    "lname": "Doe",
+    "user_description": "I am a high school english teacher with 5 years of experience. I enjoy "
+},
+{
+    "username": "ksmith",
+    "email": "ksmith@example.com",
+    "password": "password123",
+    "fname": "Karen",
+    "lname": "Smith",
+    "user_description": "I am a graphic designer and love all things creative."
+},
+{
+    "username": "mjones",
+    "email": "mjones@example.com",
+    "password": "password123",
+    "fname": "Michael",
+    "lname": "Jones",
+    "user_description": "I am a student studying anthropology."
+},
+{
+    "username": "awilliams",
+    "email": "awilliams@example.com",
+    "password": "password123",
+    "fname": "Alice",
+    "lname": "Williams",
+    "user_description": "I am a professional glass blower and enjoy socializing."
+},
+{
+    "username": "rwilson",
+    "email": "rwilson@example.com",
+    "password": "password123",
+    "fname": "Robert",
+    "lname": "Wilson",
+    "user_description": "I am a sales manager and like to play sports in my free time."
+}
+]

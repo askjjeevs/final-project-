@@ -1,0 +1,43 @@
+[
+    {
+        "street_num": 123,
+        "suit_num": null,
+        "street_name": "Main St",
+        "city": "Anytown",
+        "state": "GA",
+        "zip_code": 12345
+      },
+      {
+        "street_num": 456,
+        "suit_num": 101,
+        "street_name": "Maple Ave",
+        "city": "Sometown",
+        "state": "NY",
+        "zip_code": 67890
+      },
+      {
+        "street_num": 789,
+        "suit_num": null,
+        "street_name": "Oak St",
+        "city": "Otherplace",
+        "state": "TX",
+        "zip_code": 54321
+      },
+      {
+        "street_num": 111,
+        "suit_num": null,
+        "street_name": "Pine St",
+        "city": "Somecity",
+        "state": "WA",
+        "zip_code": 98001
+      },
+      {
+        "street_num": 222,
+        "suit_num": 303,
+        "street_name": "Cedar St",
+        "city": "Newplace",
+        "state": "CA",
+        "zip_code": 91234
+      }
+    ]
+  
