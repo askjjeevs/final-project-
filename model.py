@@ -82,7 +82,7 @@ class Address(db.Model):
         return f"<Address address_id={self.address_id} street_name={self.street_name}"
 
 
-def connect_to_db(flask_app, db_uri="postgresql:///activity_matcher", echo=True):
+def connect_to_db(flask_app, db_uri="postgresql:///activity_matcher", echo=False):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -97,3 +97,4 @@ if __name__ == "__main__":
     from server import app
 
     connect_to_db(app)
+         

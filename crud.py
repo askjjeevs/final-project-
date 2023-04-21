@@ -26,11 +26,18 @@ def create_activity(address_id, created_by, activity_name, activity_type, activi
 
     return activity
 
-def get_user_by_username(username):
-    """ return the user object with that username from the database. """
-    user = User.query.filter_by(username=username).first()
+# def create_subscriber(activity_id, user_id):
+#     """Create and return a new subscriber."""
+    
+#     subscriber = Subscriber(activity_id=activity_id, user_id=user_id)
 
-    return user 
+#     return subscriber
+
+# def get_user_by_username(username):
+#     """ return the user object with that username from the database. """
+#     user = User.query.filter_by(username=username).first()
+
+#     return user 
 
 # def get_user_by_email(email):
 #     """Takes an email as input and returns the user object with that email from the database"""
@@ -39,7 +46,6 @@ def get_user_by_username(username):
 #     """This function should take an address ID as input and return the address object with that ID from the database."""
 
 
-
-# if __name__ == '__main__':
+if __name__ == '__main__':
     from server import app
     connect_to_db(app)

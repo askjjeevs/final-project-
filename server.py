@@ -1,6 +1,6 @@
 from flask import (Flask, render_template, request, flash, session, redirect)
 from model import connect_to_db, db
-import crud
+import crud as crud
 
 from jinja2 import StrictUndefined
 
