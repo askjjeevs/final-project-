@@ -38,23 +38,7 @@ def get_user_by_username(username):
 # def get_address_by_id(address_id):
 #     """This function should take an address ID as input and return the address object with that ID from the database."""
 
-# def get_activity_by_id(activity_id):
-#     """take an activity ID as input and return the activity object with that ID from the database"""
 
-# def get_activities_by_address(address_id):
-#     """take an address ID as input and return a list of activity objects associated with that address ID from the database."""
-
-# def get_activities_by_user(user_id):
-#     """take a user ID as input and return a list of activity objects created by that user ID from the database."""
-
-# def get_all_activities():
-#     """This function should return a list of all activity objects from the database"""
-
-# def get_all_users():
-#     """This function should return a list of all user objects from the database."""
-
-# def get_all_addresses():
-#     """ This function should return a list of all address objects from the database."""
 
 # if __name__ == '__main__':
     from server import app
