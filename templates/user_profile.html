@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}User Profile page{% endblock %}
+{% block body %}
+  <h1>{{user.username}}! Welcome to your own user profile page </h1>
+  <p>Username: {{ user.username }}</p>
+  <p>Email: {{ user.email }}</p>
+  <a href="/create_new_activity" class="button">Create a new activity</a>
+
+
+  <h2>My Activities:</h2>
+  {% if user.activities %}
+    <ul>
+      {% for activity in user.activities %}
+        <li>{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You have not created any activities yet.</p>
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+

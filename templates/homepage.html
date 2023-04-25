@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}TribeConnect Homepage {% endblock %}
+
+{% block body %}
+  <h1>Welcome to Tribe Connect </h1>
+
+  <h2>This is the Homepage for now</h2>
+
+  <div class="topnav">
+    <a href="/activities" class="button">View all activities</a>
+    <a href="/create_new_account" class="button">Create new account</a>
+
+  {% if user and session["user_email"] == user.email %}
+    <a href="/users/{{ user.user_id }}">View User Profile</a>
+
+  {% else %}
+    <form action="/login" method="POST">
+      <p>
+        Email <input type="text" name="email">
+      </p>
+      <p>
+        Password <input type="password" name="password">
+      </p>
+      <p>
+        <input type="submit">
+      </p>
+    </form>
+  {% endif %}
+</div>  
+{% endblock %}

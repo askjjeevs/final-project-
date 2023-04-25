@@ -1,0 +1,4 @@
+# created by virtualenv automatically
+*pycache*
+env
+secret.sh

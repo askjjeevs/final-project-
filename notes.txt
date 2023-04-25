@@ -1,0 +1,18 @@
+"""  Notes"""
+  1- code for other activity type
+  </select>
+
+  <label for="other-activity-type">Other Activity Type:</label>
+  <input type="text" id="other-activity-type" name="other_activity_type">
+
+
+  To do today: MOnday 04/24/23 
+
+  create log in page 
+  test the other routes 
+
+
+
+  2- for @app.route('/')
+  This should create a user variable with a value of None if the user is not logged in, or the corresponding User object if they are logged in. 
+  Then, in your Jinja template, you can access the user variable and check if it exists before using it to check if the session email matches the user email:
