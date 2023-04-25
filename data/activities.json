@@ -2,31 +2,31 @@
     {
       "address_id": 1,
       "created_by": 1,
-      "activity_name": "Yoga Class",
+      "activity_name": "Yoga in the park",
       "activity_type": "Fitness",
       "activity_date": "2023-05-10",
-      "activity_description": "A beginner yoga class for those looking to improve flexibility and balance."
+      "activity_description": "A beginner yoga class for those looking to improve flexibility and balance right at the local park."
     },
     {
       "address_id": 2,
       "created_by": 2,
-      "activity_name": "Cooking Class",
+      "activity_name": "Knife skills class",
       "activity_type": "Culinary",
       "activity_date": "2023-05-15",
-      "activity_description": "Learn to make delicious and healthy meals from a professional chef."
+      "activity_description": "Learn to make delicious and healthy meals and mastering the knife safely and with ease."
     },
     {
       "address_id": 3,
       "created_by": 3,
-      "activity_name": "Painting Workshop",
+      "activity_name": "Sip & Paint at the New Parkway",
       "activity_type": "Art",
       "activity_date": "2023-05-20",
-      "activity_description": "Explore your creativity and learn painting techniques with a local artist."
+      "activity_description": "Explore your creativity and practice painting techniques with a local artists who paint along side each other. Great opportunity to meet local artist and art novices."
     },
     {
       "address_id": 4,
       "created_by": 4,
-      "activity_name": "Hiking Group",
+      "activity_name": "Hike to the Bamboo Forest",
       "activity_type": "Fitness",
       "activity_date": "2023-05-25",
       "activity_description": "Join a group of outdoor enthusiasts for a scenic hike in the mountains."
@@ -34,10 +34,10 @@
     {
       "address_id": 5,
       "created_by": 5,
-      "activity_name": "Book Club",
-      "activity_type": "Literature",
+      "activity_name": "Puzzles & Wine",
+      "activity_type": "Games",
       "activity_date": "2023-06-01",
-      "activity_description": "Discuss the latest bestseller and connect with other book lovers in your community."
+      "activity_description": "Tackle that 5000 piece world map puzzle."
     }
     
     

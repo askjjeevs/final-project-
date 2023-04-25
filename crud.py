@@ -2,11 +2,11 @@
 
 from model import db, User, Address, Activity, Subscriber, connect_to_db
 
-def create_user(username, email, password, fname, lname, user_description):
+def create_user(username, email, password, fname, lname, address_id, user_description):
     """Create and return a new user."""
     
     user = User(username=username, email=email, password=password, 
-                fname=fname, lname=lname, user_description=user_description)
+                fname=fname, lname=lname,address_id=address_id, user_description=user_description)
 
     return user
 
@@ -26,24 +26,24 @@ def create_activity(address_id, created_by, activity_name, activity_type, activi
 
     return activity
 
-# def create_subscriber(activity_id, user_id):
-#     """Create and return a new subscriber."""
+def get_activities():
+    """This function should return a list of all activity objects from the database"""
+
+    return Activity.query.all()
+
+def get_user_by_email(email):
+     """Return a user by email."""
+
+     return User.query.filter(User.email == email).first()
+
+def get_user_by_id(user_id):
+
+    return User.query.get(user_id)
+
+def get_activities_by_user(user_id):
     
-#     subscriber = Subscriber(activity_id=activity_id, user_id=user_id)
+    return Activity.query.get(user_id)
 
-#     return subscriber
-
-# def get_user_by_username(username):
-#     """ return the user object with that username from the database. """
-#     user = User.query.filter_by(username=username).first()
-
-#     return user 
-
-# def get_user_by_email(email):
-#     """Takes an email as input and returns the user object with that email from the database"""
-    
-# def get_address_by_id(address_id):
-#     """This function should take an address ID as input and return the address object with that ID from the database."""
 
 
 if __name__ == '__main__':

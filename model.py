@@ -46,7 +46,6 @@ class Activity(db.Model):
     def __repr__(self):
         return f"<Activity activity_id={self.activity_id} activity_name={self.activity_name}"
 
-
 class Subscriber(db.Model):
     """Association table.Multiple users can sign up for the same activity created by one user. 
     This table hold the user_id and the activity_id for each subscription"""
@@ -67,7 +66,7 @@ class Address(db.Model):
 
     address_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     street_num = db.Column(db.Integer, nullable=False)
-    suit_num = db.Column(db.Integer, nullable=True)
+    suit_num = db.Column(db.Integer, nullable=False)
     street_name = db.Column(db.String(25), nullable=False)
     city = db.Column(db.String(25), nullable=False)
     state = db.Column(db.String(2), nullable=False)
@@ -80,7 +79,6 @@ class Address(db.Model):
 
     def __repr__(self):
         return f"<Address address_id={self.address_id} street_name={self.street_name}"
-
 
 def connect_to_db(flask_app, db_uri="postgresql:///activity_matcher", echo=False):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
