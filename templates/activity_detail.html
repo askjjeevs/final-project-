@@ -1,0 +1,32 @@
+!DOCTYPE html>
+<html>
+<head>
+	<title>Activity Details</title>
+</head>
+<body>
+	<h1>Activity Details</h1>
+	<h2>{{ activity.activity_name }}</h2>
+	<p>Description: {{ activity.activity_description }}</p>
+	<p>Location: {{ activity. }}</p>
+	<p>Date: {{ activity.activity_date }}</p>
+	
+	
+
+	<h2>Subscribers</h2>
+	{% if activity.subscribers %}
+		<ul>
+			{% for subscriber in activity.subscribers %}
+				<li>{{ subscriber.username }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No subscribers yet.</p>
+	{% endif %}
+</body>
+</html>
+
+
+
+
+
+
