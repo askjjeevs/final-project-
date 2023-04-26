@@ -16,6 +16,7 @@ class User(db.Model):
     lname = db.Column(db.String(25), nullable=False)
     address_id = db.Column(db.Integer, db.ForeignKey("addresses.address_id"), nullable=True) #nullable = True ( means this field does not need to be populated)
     user_description = db.Column(db.Text, nullable=True)
+    # add image 
  
     #one user has one address, but one address has multiple users
     address = db.relationship("Address", back_populates="users")
@@ -37,6 +38,7 @@ class Activity(db.Model):
     activity_type = db.Column(db.String(25), nullable=False)
     activity_date = db.Column(db.DateTime, nullable=False)
     activity_description = db.Column(db.Text)
+    # add image 
 
     # every activity has one address. One address can be reused for many activities
     address = db.relationship("Address", back_populates="activities")

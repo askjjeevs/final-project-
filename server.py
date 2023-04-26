@@ -15,7 +15,10 @@ def homepage():
     user = None
     if "user_email" in session:
         user = crud.get_user_by_email(session["user_email"])
-    return render_template('homepage.html', user = user)
+    
+    activities = Activity.query.all()
+
+    return render_template('homepage.html', user = user, activities=activities)
 
 @app.route('/create_new_account')
 def show_create_page():
@@ -57,12 +60,9 @@ def create_new_user():
 def show_user_profile(user_id):
     """Display details on a particular user."""
     # Query the database for the user with the given user_id
-    print("*****", user_id)
     user = crud.get_user_by_id(user_id)
-    
     # Get the user's activities from the database
     activities = crud.get_activities_by_user(user_id)
-    print("***** END")
     # Render the user_profile.html template with the user and activities data
     return render_template('user_profile.html', user=user, activities=activities)
 
@@ -82,6 +82,17 @@ def process_login():
         session["user_name"] = user.username
         flash(f"Welcome back, {user.username}!")
 
+    return redirect("/")
+
+@app.route("/logout")
+def logout():
+    """Log out the current user."""
+
+    # Remove the user's email and name from session
+    del session["user_email"]
+    del session["user_name"]
+
+    # Redirect the user to the homepage
     return redirect("/")
 
 @app.route("/create_new_activity")
@@ -115,6 +126,14 @@ def create_activities():
     flash("Yay!! Your activity has been succesfully created!")
 
     return redirect("/users/<user_id>")
+
+# @app.route("/all_activities")
+# def show_all_activities():
+#     """View all activities"""
+
+#     activities = Activity.query.all()
+
+#     return render_template("all_activities.html", activities=activities)
 
 if __name__ == "__main__":
     connect_to_db(app)

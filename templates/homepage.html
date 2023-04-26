@@ -7,11 +7,11 @@
   <h2>This is the Homepage for now</h2>
 
   <div class="topnav">
-    <a href="/activities" class="button">View all activities</a>
     <a href="/create_new_account" class="button">Create new account</a>
 
   {% if user and session["user_email"] == user.email %}
     <a href="/users/{{ user.user_id }}">View User Profile</a>
+    <a href="/logout">Logout</a>
 
   {% else %}
     <form action="/login" method="POST">
@@ -27,4 +27,15 @@
     </form>
   {% endif %}
 </div>  
+
+{% for activity in activities %}
+<ul>
+    <li>
+      <a href="/activities/{{ activity.activity_id }}"></a>
+      {{ activity.activity_name }}
+    </li>
+</ul>
+   
+{% endfor %}
+
 {% endblock %}
