@@ -1,26 +1,33 @@
 {% extends "base.html" %}
 {% block title %}User Dashboard{% endblock %}
 {% block body %}
-  <h1>{{user.username}}! Welcome to your User Dashboard </h1>
-  <p>Username: {{ user.username }}</p>
-  <p>Email: {{ user.email }}</p>
+  <h1>
+    {{user.username}}! Welcome to your User Dashboard
+  </h1>
+  <p>
+    Username: {{ user.username }}
+  </p>
+  <p>
+    Email: {{ user.email }}
+  </p>
   <p>
     Address: {{ user_address.street_num}} {{ user_address.street_name }}, 
     {{ user_address.city }}, {{ user_address.state }} {{ user_address.zip_code }}
   </p>
-  <a href="/create_new_activity" class="button">Create a new activity</a>
+    <a href="/create_new_activity" class="button">Create a new activity</a>
 
-
-  <h2>My Activities:</h2>
-  {% if activities %}
-    <ul>
-      {% for activity in activities %}
-        <li>{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>You have not created any activities yet.</p>
-  {% endif %}
+  <h2>
+    My Activities:
+  </h2>
+    {% if activities %}
+      <ul>
+        {% for activity in activities %}
+          <li>{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You have not created any activities yet.</p>
+    {% endif %}
 {% endblock %}
 
 

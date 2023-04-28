@@ -1,19 +1,23 @@
 {% extends "base.html" %}
-{% block title %}User Profile View{p% endblock %}
+{% block title %}User Profile View{% endblock %}
 
 {% block body %}
   <h1>User Profile viewed by other users</h1>
+  <p>
+    <ul>
+      <li>
+        Username: {{ user.username }}
+      </li>
+      <li>
+        Email: {{ user.email }}
+      </li>
+      <li>
+        Name: {{ user.fname }} {{ user.lname }}
+      </li>
+      <li>
+        A little bit about me: {{ user.user_description }}
+      </li>
+    </ul>
+  </p>
 
-  <ul>
-    <li>
-      Username: {{ user.username }}
-    </li>
-    <li>
-      Email: {{ user.email }}
-    </li>
-    <li>
-      Name: {{ user.fname }} {{ user.lname }}
-    </li>
-      Desrciption: {{ user.user_description }}
-  </ul>
 {% endblock %}

@@ -63,7 +63,6 @@ def show_user_dashboard(user_id):
     user = crud.get_user_by_id(user_id)
     # Get the user's activities from the database
     activities = crud.get_activities_by_user(user_id)
-    print("******************jijioju****", activities)
     #Get's the user's address from the address table in the database 
     user_address = crud.get_address_by_user_id(user_id)
     # Render the user_dashboard html template with the user and activities data
@@ -87,11 +86,10 @@ def process_login():
 
     user = crud.get_user_by_email(email)
     if not user or user.password != password:
-        flash("The email or password you entered was incorrect.")
+        flash("The email or password you entered was either not in our system or incorrect. Please try again")
     else:
         # Log in user by storing the user's email and name in session
         session["user_id"] = user.user_id
-        print("*******************************", user.user_id)
         session["user_email"] = user.email
         session["user_name"] = user.username
         flash(f"Welcome back, {user.username}!")
@@ -123,7 +121,6 @@ def create_activities():
     activity_date = request.form.get("activity_date")
     activity_description = request.form.get("activity_description")
     created_by = int(session["user_id"])
-    print("*******************************", "AGAIN", "AGAIN", created_by)
     street_num = request.form.get("street_num")
     suit_num = request.form.get("suit_num")
     street_name = request.form.get("street_name")

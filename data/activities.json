@@ -40,5 +40,14 @@
       "activity_description": "Tackle that 5000 piece world map puzzle."
     }
     
+    {
+      "address_id": 6,
+      "created_by": 3,
+      "activity_name": "Farmer's Market",
+      "activity_type": "Outdoor",
+      "activity_date": "2023-04-25",
+      "activity_description": "Come along and get some locally grown fresh vegetables. It's also a great time to meet local artisan "
+    }
+    
     
 ]
