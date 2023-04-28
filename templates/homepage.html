@@ -10,7 +10,7 @@
     <a href="/create_new_account" class="button">Create new account</a>
 
   {% if user and session["user_email"] == user.email %}
-    <a href="/users/{{ user.user_id }}">View User Profile</a>
+    <a href="/users/{{ user.user_id }}">View your User Dashboard</a>
     <a href="/logout">Logout</a>
 
   {% else %}
@@ -31,8 +31,7 @@
 {% for activity in activities %}
 <ul>
     <li>
-      <a href="/activities/{{ activity.activity_id }}"></a>
-      {{ activity.activity_name }}
+      <a href="/activities/{{ activity.activity_id }}">{{ activity.activity_name }}</a>
     </li>
 </ul>
    

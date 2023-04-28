@@ -12,16 +12,18 @@ class User(db.Model):
     username = db.Column(db.String, unique=True)
     email = db.Column(db.String, unique=True,)
     password = db.Column(db.String,)
-    fname = db.Column(db.String(25), nullable=False)
-    lname = db.Column(db.String(25), nullable=False)
+    fname = db.Column(db.String(100), nullable=False)
+    lname = db.Column(db.String(100), nullable=False)
     address_id = db.Column(db.Integer, db.ForeignKey("addresses.address_id"), nullable=True) #nullable = True ( means this field does not need to be populated)
     user_description = db.Column(db.Text, nullable=True)
     # add image 
  
     #one user has one address, but one address has multiple users
     address = db.relationship("Address", back_populates="users")
-    # one activity can have many users.
+    # one activity can have many users.(consider calling it subscribed activities?)
     activities = db.relationship("Activity", secondary="subscribers", back_populates="users")
+    # allows one to see the activites_created by a specific user
+    # activities_created = db.relationship("Activity", back_populates="creator")
 
     def __repr__(self):
         return f"<User user_id={self.user_id} email={self.email}"
@@ -34,9 +36,9 @@ class Activity(db.Model):
     activity_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     address_id = db.Column(db.Integer, db.ForeignKey("addresses.address_id"), nullable=True)
     created_by = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=True) 
-    activity_name = db.Column(db.String(25), nullable=False)
-    activity_type = db.Column(db.String(25), nullable=False)
-    activity_date = db.Column(db.DateTime, nullable=False)
+    activity_name = db.Column(db.String(100), nullable=False)
+    activity_type = db.Column(db.String(100), nullable=False)
+    activity_date = db.Column(db.DateTime, nullable=True)
     activity_description = db.Column(db.Text)
     # add image 
 
@@ -44,6 +46,8 @@ class Activity(db.Model):
     address = db.relationship("Address", back_populates="activities")
     #one activity can have many users, and one users can have many activities- hence list of objects will be returned. 
     users = db.relationship("User", secondary="subscribers", back_populates="activities")
+    # allows one to see the activities that a user has created. 
+    # creator = db.relationship("User", back_populates="activities_created")
 
     def __repr__(self):
         return f"<Activity activity_id={self.activity_id} activity_name={self.activity_name}"
@@ -68,7 +72,7 @@ class Address(db.Model):
 
     address_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     street_num = db.Column(db.Integer, nullable=False)
-    suit_num = db.Column(db.Integer, nullable=False)
+    suit_num = db.Column(db.String(5), nullable=True)
     street_name = db.Column(db.String(25), nullable=False)
     city = db.Column(db.String(25), nullable=False)
     state = db.Column(db.String(2), nullable=False)

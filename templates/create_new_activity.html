@@ -32,12 +32,8 @@
     </select>
     </p>
     <p>
-    <label for="activity_date">Activity Date: </label>
-    <input type="datetime" id="activity_date" name="activity_date" required><br>
-    </p>
-    <p>
-    <label for="created_by">Created by(input your username): </label>
-    <input type="text" name="created_by" required><br>
+    <label for="activity_date">Date of Activity: </label>
+    <input type="date" id="activity_date" name="activity_date"><br>
     </p>
     <p>
     <label for="address">Address</label>
@@ -112,12 +108,16 @@
     </select>
     </p>
     <p>
-    <label for="activity_description">Describe this activity:</label>
+      <label for="zip_code">Zip Code: </label> 
+      <input type="text" id="zip_code" name="zip_code" required><br>
     </p>
     <p>
-    <textarea name="activity_description" rows="10" cols="40"></textarea><br>  
+      <label for="activity_description">Describe this activity:</label>
     </p>
-    <input type="submit" value = "Add a new TribeConnect activity">
+    <p>
+      <textarea name="activity_description" rows="10" cols="40"></textarea><br>  
+    </p>
+     <input type="submit" value = "Add a new TribeConnect activity">
     
   </form>
 

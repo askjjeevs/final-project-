@@ -1,26 +1,19 @@
 {% extends "base.html" %}
-{% block title %}User Profile page{% endblock %}
+{% block title %}User Profile View{p% endblock %}
+
 {% block body %}
-  <h1>{{user.username}}! Welcome to your own user profile page </h1>
-  <p>Username: {{ user.username }}</p>
-  <p>Email: {{ user.email }}</p>
-  <a href="/create_new_activity" class="button">Create a new activity</a>
+  <h1>User Profile viewed by other users</h1>
 
-
-  <h2>My Activities:</h2>
-  {% if user.activities %}
-    <ul>
-      {% for activity in user.activities %}
-        <li>{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>You have not created any activities yet.</p>
-  {% endif %}
+  <ul>
+    <li>
+      Username: {{ user.username }}
+    </li>
+    <li>
+      Email: {{ user.email }}
+    </li>
+    <li>
+      Name: {{ user.fname }} {{ user.lname }}
+    </li>
+      Desrciption: {{ user.user_description }}
+  </ul>
 {% endblock %}
-
-
-
-
-
-

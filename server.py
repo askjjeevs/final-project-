@@ -57,14 +57,26 @@ def create_new_user():
     return redirect("/")
 
 @app.route("/users/<user_id>")
-def show_user_profile(user_id):
-    """Display details on a particular user."""
+def show_user_dashboard(user_id):
+    """Display dashboard containing activities and details for a particular user by user ID."""
     # Query the database for the user with the given user_id
     user = crud.get_user_by_id(user_id)
     # Get the user's activities from the database
     activities = crud.get_activities_by_user(user_id)
-    # Render the user_profile.html template with the user and activities data
-    return render_template('user_profile.html', user=user, activities=activities)
+    print("******************jijioju****", activities)
+    #Get's the user's address from the address table in the database 
+    user_address = crud.get_address_by_user_id(user_id)
+    # Render the user_dashboard html template with the user and activities data
+    return render_template('user_dashboard.html', user=user, activities=activities, user_address=user_address)
+
+@app.route("/user_profile/<user_id>")
+def display_user_profile(user_id):
+    """Display details/profile of a particular user by user_id"""
+
+    user = crud.get_user_by_id(user_id)
+
+    return render_template('user_profile.html', user=user)
+
 
 @app.route("/login", methods=["POST"])
 def process_login():
@@ -78,11 +90,13 @@ def process_login():
         flash("The email or password you entered was incorrect.")
     else:
         # Log in user by storing the user's email and name in session
+        session["user_id"] = user.user_id
+        print("*******************************", user.user_id)
         session["user_email"] = user.email
         session["user_name"] = user.username
         flash(f"Welcome back, {user.username}!")
 
-    return redirect("/")
+    return redirect("/") 
 
 @app.route("/logout")
 def logout():
@@ -101,14 +115,15 @@ def show_create_activities():
 
     return render_template("create_new_activity.html")
 
-@app.route("/activities")
+@app.route("/activities", methods=["POST"])
 def create_activities():
     """Create a new activities"""
     activity_name = request.form.get("activity_name")
     activity_type = request.form.get("activity_type")
     activity_date = request.form.get("activity_date")
     activity_description = request.form.get("activity_description")
-    created_by = request.form.get("created_by")
+    created_by = int(session["user_id"])
+    print("*******************************", "AGAIN", "AGAIN", created_by)
     street_num = request.form.get("street_num")
     suit_num = request.form.get("suit_num")
     street_name = request.form.get("street_name")
@@ -125,7 +140,17 @@ def create_activities():
     db.session.commit()
     flash("Yay!! Your activity has been succesfully created!")
 
-    return redirect("/users/<user_id>")
+    return redirect("/users/"+str(session["user_id"]))
+
+@app.route("/activities/<activity_id>")
+def show_activity_details(activity_id):
+    """View activity details page"""
+
+    activity = crud.get_activity_by_id(activity_id)
+    # subscriber = crud.get_subscribers_by_activity(activity_id)
+    created_by = crud.get_user_by_id(activity.created_by)
+
+    return render_template("activity_details.html", activity=activity, created_by=created_by)
 
 # @app.route("/all_activities")
 # def show_all_activities():

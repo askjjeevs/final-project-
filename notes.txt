@@ -41,3 +41,34 @@ https://docs.google.com/document/d/1bbT4hqq--ORiD0EZ4T470P7OYEqPn0PCH1RbxtFAmpU/
 
 -could have a default image for the default value- add image to model and database, adjust seeddatabase.py 
 -users could then upload their own image. 
+
+
+date time syntax 2012-04-21T18:25:43-05:00 
+ # activity['activity_date'].date,
+        # datetime.strptime(activity['activity_date'], '%d %b %Y  %H:%M:%S.%f').date,
+        # datetime.strptime(activity['activity_date'], '%d %b %Y  %H:%M:%S.%f').time,
+         #a datetime objects from the date & time fields
+        # activity_datetime = datetime.combine(datetime.strptime(activity_date, '%Y-%m-%d').date(),datetime.strptime(activity_time, '%H:%M:%S').time())
+
+       activity_time = request.form.get("activity_time")'
+
+time from html 
+  <p>Time: {{ activity.activity_time }}</p>
+ </p>
+    <label for="activity_time">Time: </label>
+    <input type="time" id="activity_time" name="activity_time"><br>
+    <p>
+
+
+    TO DO: 
+
+    add ifelse block from the homepage- Create Account 
+
+    within the create new activitiy_ add session for 
+
+    <p>
+    <label for="created_by">Created by(input your username): </label>
+    <input type="text" name="created_by" required><br>
+    </p>
+
+    clean up the crud. file to have all the users, activities and addresses functions organized. 
