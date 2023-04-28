@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Activity Details{% endblock %}
+
+{% block body %}
+	<h2>Tribe Activity Details</h2>
+	<h2>{{ activity.activity_name }}</h2>
+	<p>Host of activity: {{ created_by.username }}</p>
+	<p>Date of activity: {{ activity.activity_date }}</p>
+	<p>Type of activity: {{ activity.activity_type }}</p>
+	<p>Description: {{ activity.activity_description }}</p>
+	<p>Address: {{ activity.address_id }}</p>
+	
+	
+	<h2>Subscribers</h2>
+	{% if activity.users %}
+		<ul>
+			{% for user in activity.users %}
+				<li>
+					<a href="/user_profile/{{ user.user_id }}">{{ user.username }}</a>
+				</li>
+
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No subscribers yet.</p>
+	{% endif %}
+{% endblock %}
+
+
+
+
+
+
