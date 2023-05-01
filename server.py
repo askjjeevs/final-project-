@@ -39,8 +39,9 @@ def create_new_user():
     city = request.form.get("city")
     state = request.form.get("state") 
     zip_code = request.form.get("zip_code")
+    user_image_path = request.form.get("user_image_path")
     user_description = request.form.get("user_description")
-
+    
     address = crud.create_address(street_num, suit_num, street_name, city, state, zip_code)
     db.session.add(address)
     db.session.commit()
@@ -49,7 +50,7 @@ def create_new_user():
     if user:
         flash("An account with that email already exists. Try another email.")
     else:
-        user = crud.create_user(username, email, password, fname,lname, address.address_id, user_description)
+        user = crud.create_user(username, email, password, fname,lname, address.address_id, user_image_path, user_description)
         db.session.add(user)
         db.session.commit()
         flash("Account created! Please log in.")
@@ -63,6 +64,7 @@ def show_user_dashboard(user_id):
     user = crud.get_user_by_id(user_id)
     # Get the user's activities from the database
     activities = crud.get_activities_by_user(user_id)
+    print("#######################################", activities)
     #Get's the user's address from the address table in the database 
     user_address = crud.get_address_by_user_id(user_id)
     # Render the user_dashboard html template with the user and activities data
@@ -120,6 +122,7 @@ def create_activities():
     activity_type = request.form.get("activity_type")
     activity_date = request.form.get("activity_date")
     activity_description = request.form.get("activity_description")
+    activity_image_path = request.form.get("activity_image_path")
     created_by = int(session["user_id"])
     street_num = request.form.get("street_num")
     suit_num = request.form.get("suit_num")
@@ -132,7 +135,7 @@ def create_activities():
     db.session.add(address)
     db.session.commit()
 
-    activity = crud.create_activity(address.address_id, created_by, activity_name, activity_type, activity_date, activity_description)
+    activity = crud.create_activity(address.address_id, created_by, activity_name, activity_type, activity_date, activity_image_path, activity_description)
     db.session.add(activity)
     db.session.commit()
     flash("Yay!! Your activity has been succesfully created!")
@@ -149,6 +152,11 @@ def show_activity_details(activity_id):
 
     return render_template("activity_details.html", activity=activity, created_by=created_by)
 
+# @app.route("/subscribe/<activity_id>", methods=["POST"])
+# def subscribe_activity(activity_id):
+#     """Users can subscribe to an activity"""
+#     # if user is loged in ( use session ) flash a message "Log "
+
 # @app.route("/all_activities")
 # def show_all_activities():
 #     """View all activities"""
@@ -156,6 +164,8 @@ def show_activity_details(activity_id):
 #     activities = Activity.query.all()
 
 #     return render_template("all_activities.html", activities=activities)
+
+
 
 if __name__ == "__main__":
     connect_to_db(app)

@@ -5,6 +5,7 @@
       "activity_name": "Yoga in the park",
       "activity_type": "Fitness",
       "activity_date": "2023-05-10",
+      "activity_image_path":"/static/images/yoga.jpg",
       "activity_description": "A beginner yoga class for those looking to improve flexibility and balance right at the local park."
     },
     {
@@ -13,6 +14,7 @@
       "activity_name": "Knife skills class",
       "activity_type": "Culinary",
       "activity_date": "2023-05-15",
+      "activity_image_path":"/static/images/knife_skills.jpg",
       "activity_description": "Learn to make delicious and healthy meals and mastering the knife safely and with ease."
     },
     {
@@ -21,6 +23,7 @@
       "activity_name": "Sip & Paint at the New Parkway",
       "activity_type": "Art",
       "activity_date": "2023-05-20",
+      "activity_image_path":"/static/images/paint.jpg",
       "activity_description": "Explore your creativity and practice painting techniques with a local artists who paint along side each other. Great opportunity to meet local artist and art novices."
     },
     {
@@ -29,6 +32,7 @@
       "activity_name": "Hike to the Bamboo Forest",
       "activity_type": "Fitness",
       "activity_date": "2023-05-22",
+      "activity_image_path":"/static/images/hike.jpg",
       "activity_description": "Join a group of outdoor enthusiasts for a scenic hike in the mountains."
     },
     {
@@ -37,15 +41,17 @@
       "activity_name": "Puzzles & Wine",
       "activity_type": "Games",
       "activity_date": "2023-05-25",
+      "activity_image_path":"/static/images/puzzle.jpg",
       "activity_description": "Tackle that 5000 piece world map puzzle."
-    }
+    },
     
     {
-      "address_id": 6,
+      "address_id": 5,
       "created_by": 3,
       "activity_name": "Farmer's Market",
       "activity_type": "Outdoor",
       "activity_date": "2023-04-25",
+      "activity_image_path":"/static/images/farmers_market.jpg",
       "activity_description": "Come along and get some locally grown fresh vegetables. It's also a great time to meet local artisan "
     }
     

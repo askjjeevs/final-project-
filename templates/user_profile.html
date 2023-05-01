@@ -3,21 +3,25 @@
 
 {% block body %}
   <h1>User Profile viewed by other users</h1>
-  <p>
+  <div>
     <ul>
       <li>
-        Username: {{ user.username }}
+        <p>Username: {{ user.username }}</p> 
       </li>
       <li>
-        Email: {{ user.email }}
+        <p>Email: {{ user.email }}</p>
       </li>
+      <p>
+        <img id="user-profile-images"
+        src="{{ user.user_image_path }}" alt="Stock Image of a User" style="width: 200px; height: 200px;">>
+      </p>
       <li>
-        Name: {{ user.fname }} {{ user.lname }}
+        <p>Name: {{ user.fname }} {{ user.lname }}</p>
       </li>
-      <li>
-        A little bit about me: {{ user.user_description }}
+      <li> 
+        <p>A little bit about me: {{ user.user_description }}</p>
       </li>
     </ul>
-  </p>
+  </div>
 
 {% endblock %}

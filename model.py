@@ -16,7 +16,8 @@ class User(db.Model):
     lname = db.Column(db.String(100), nullable=False)
     address_id = db.Column(db.Integer, db.ForeignKey("addresses.address_id"), nullable=True) #nullable = True ( means this field does not need to be populated)
     user_description = db.Column(db.Text, nullable=True)
-    # add image 
+    user_image_path = db.Column(db.String)
+
  
     #one user has one address, but one address has multiple users
     address = db.relationship("Address", back_populates="users")
@@ -26,7 +27,7 @@ class User(db.Model):
     # activities_created = db.relationship("Activity", back_populates="creator")
 
     def __repr__(self):
-        return f"<User user_id={self.user_id} email={self.email}"
+        return f"<User user_id={self.user_id} email={self.email}>"
 
 class Activity(db.Model):
     """The Activity created by a user and subscribed to by many"""
@@ -39,8 +40,8 @@ class Activity(db.Model):
     activity_name = db.Column(db.String(100), nullable=False)
     activity_type = db.Column(db.String(100), nullable=False)
     activity_date = db.Column(db.DateTime, nullable=True)
+    activity_image_path = db.Column(db.String)
     activity_description = db.Column(db.Text)
-    # add image 
 
     # every activity has one address. One address can be reused for many activities
     address = db.relationship("Address", back_populates="activities")
@@ -50,7 +51,7 @@ class Activity(db.Model):
     # creator = db.relationship("User", back_populates="activities_created")
 
     def __repr__(self):
-        return f"<Activity activity_id={self.activity_id} activity_name={self.activity_name}"
+        return f"<Activity activity_id={self.activity_id} activity_name={self.activity_name} subscribers={self.users}>"
 
 class Subscriber(db.Model):
     """Association table.Multiple users can sign up for the same activity created by one user. 
@@ -63,7 +64,7 @@ class Subscriber(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
 
     def __repr__(self):
-        return f"<This is the subscriber. subscriber_id={self.subscriber_id}"
+        return f"<This is the subscriber. subscriber_id={self.subscriber_id} user_id={self.user_id}"
     
 class Address(db.Model):
     """Addresses for activities and users"""
@@ -84,7 +85,7 @@ class Address(db.Model):
     activities = db.relationship("Activity", back_populates="address")
 
     def __repr__(self):
-        return f"<Address address_id={self.address_id} street_name={self.street_name}"
+        return f"<Address address_id={self.address_id} street_name={self.street_name}>"
 
 def connect_to_db(flask_app, db_uri="postgresql:///activity_matcher", echo=False):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri

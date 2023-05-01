@@ -8,10 +8,13 @@
   <h1>
     Welcome to Tribe Connect 
   </h1>
-
-  <h2>
-    This is the Homepage for now
-  </h2>
+    <p>
+      Here's where you can build a community of curious minds and open hearts,
+    </p>
+    <p>discover the beauty of shared experiences and meaninful relationships, 
+    </p>
+    <p>one connection at a time.
+    </p>
 
 <div 
   class="topnav">
@@ -20,7 +23,9 @@
   {% if user and session["user_email"] == user.email %}
     <a href="/users/{{ user.user_id }}">View your User Dashboard</a>
     <a href="/logout">Logout</a>
+</div>
 
+<div>
   {% else %}
     <form action="/login" method="POST">
       <p>
@@ -37,14 +42,22 @@
 </div>  
 
 <!-- Flexbox to display activities in three columns or use react trading cards with grid -->
+<div>
+<h3>
+  Upcoming TribeConnect events
+</h3>
 
   {% for activity in activities %}
     <ul>
         <li>
-          <a href="/activities/{{ activity.activity_id }}">{{ activity.activity_name }}</a>
+          <p><a href="/activities/{{ activity.activity_id }}">{{ activity.activity_name }}</a></p>
+          <p>{{ activity.activity_date }}</p>
+          <p><img id="activity-images"
+            src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;"></p>
         </li>
     </ul>
    
   {% endfor %}
+</div>
 
 {% endblock %}

@@ -5,11 +5,11 @@ from model import db, User, Address, Activity, Subscriber, connect_to_db
 # CRUD functions for USERS, ACTIVITIES, ADDRRESS & SUBSCRIBERS
 # CRUD= create(new data), read(or retrieve data that already exists), update, delete
  # USERS 
-def create_user(username, email, password, fname, lname, address_id, user_description):
+def create_user(username, email, password, fname, lname, address_id, user_image_path, user_description):
     """Create and return a new user."""
     
     user = User(username=username, email=email, password=password, 
-                fname=fname, lname=lname,address_id=address_id, user_description=user_description)
+                fname=fname, lname=lname,address_id=address_id, user_image_path=user_image_path, user_description=user_description)
 
     return user
 
@@ -27,11 +27,11 @@ def get_all_users():
     return User.query.all()
 
 # ACTIVITIES 
-def create_activity(address_id, created_by, activity_name, activity_type, activity_date, activity_description):
+def create_activity(address_id, created_by, activity_name, activity_type, activity_date,activity_image_path, activity_description):
     """Create and return a new activity."""
     
     activity = Activity(address_id=address_id, created_by=created_by, activity_name=activity_name, 
-                        activity_type=activity_type, activity_date=activity_date, activity_description=activity_description)
+                        activity_type=activity_type, activity_date=activity_date, activity_image_path=activity_image_path, activity_description=activity_description)
 
     return activity
 
@@ -41,7 +41,7 @@ def get_activities():
     return Activity.query.all()
 
 def get_activities_by_user(user_id):
-    
+    # return Activity.query.filter(User.user_id==user_id).join(User).join(Subscriber).all()
     return Activity.query.filter(User.user_id==user_id).all()
 
 def get_activity_by_id(activity_id):

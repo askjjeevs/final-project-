@@ -72,3 +72,8 @@ time from html
     </p>
 
     clean up the crud. file to have all the users, activities and addresses functions organized. 
+
+
+
+
+    

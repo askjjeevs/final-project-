@@ -4,11 +4,15 @@
 {% block body %}
 	<h2>Tribe Activity Details</h2>
 	<h2>{{ activity.activity_name }}</h2>
-	<p>Host of activity: {{ created_by.username }}</p>
+	<p>Host of activity: {{ created_by.fname }}</p>
 	<p>Date of activity: {{ activity.activity_date }}</p>
 	<p>Type of activity: {{ activity.activity_type }}</p>
 	<p>Description: {{ activity.activity_description }}</p>
 	<p>Address: {{ activity.address_id }}</p>
+	<p>
+    	<img id="activity-images"
+        src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">>
+    </p>
 	
 	
 	<h2>Subscribers</h2>
@@ -24,6 +28,17 @@
 	{% else %}
 		<p>No subscribers yet.</p>
 	{% endif %}
+
+
+	<h2>Subscribe to this activity</h2>
+	{% if user %}
+		<form method="POST" action="{{ url_for('subscribe_activity', activity_id=activity.activity_id) }}">
+			<input type="submit" value="Subscribe">
+		</form>
+	{% else %}
+  		<p>Please log in to subscribe to activities.</p>
+{% endif %}
+
 {% endblock %}
 
 

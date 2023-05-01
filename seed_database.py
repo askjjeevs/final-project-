@@ -47,17 +47,19 @@ db.session.commit()
 # Create users, store them in a list to use for fake data
 users_in_db = []
 for user in user_data:
-    username, email, password, fname, lname, address_id, user_description = (
+    username, email, password, fname, lname, address_id, user_image_path, user_description = (
         user['username'],
         user['email'],
         user['password'],
         user['fname'],
         user['lname'],
         user['address_id'],
-        user['user_description'])
+        user['user_image_path'],
+        user['user_description']
+        )
     
     db_user = crud.create_user(username=username, email=email, password=password, 
-                               fname=fname, lname=lname, address_id=address_id, user_description=user_description)
+                               fname=fname, lname=lname, address_id=address_id, user_image_path=user_image_path, user_description=user_description)
     users_in_db.append(db_user)
 
 db.session.add_all(users_in_db)
@@ -67,16 +69,17 @@ db.session.commit()
 # Create activities, store them in a list to use for fake data
 activities_in_db = []
 for activity in activity_data:
-    address_id, created_by, activity_name, activity_type, activity_date, activity_description = (
+    address_id, created_by, activity_name, activity_type, activity_date, activity_image_path, activity_description = (
         activity['address_id'],
         activity['created_by'],
         activity['activity_name'],
         activity['activity_type'],
         datetime.strptime(activity['activity_date'], '%Y-%m-%d'),
+        activity['activity_image_path'],
         activity['activity_description'])
        
     db_activity = crud.create_activity(address_id=address_id, created_by=created_by, activity_name=activity_name, 
-                        activity_type=activity_type, activity_date=activity_date, activity_description=activity_description)
+                        activity_type=activity_type, activity_date=activity_date, activity_image_path=activity_image_path, activity_description=activity_description)
     activities_in_db.append(db_activity)
 
 db.session.add_all(activities_in_db)
