@@ -11,12 +11,12 @@ class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String, unique=True)
     email = db.Column(db.String, unique=True,)
-    password = db.Column(db.String,)
+    password = db.Column(db.String, nullable=False)
     fname = db.Column(db.String(100), nullable=False)
     lname = db.Column(db.String(100), nullable=False)
     address_id = db.Column(db.Integer, db.ForeignKey("addresses.address_id"), nullable=True) #nullable = True ( means this field does not need to be populated)
     user_description = db.Column(db.Text, nullable=True)
-    user_image_path = db.Column(db.String)
+    user_image_path = db.Column(db.String, nullable=True)
 
  
     #one user has one address, but one address has multiple users
@@ -24,7 +24,7 @@ class User(db.Model):
     # one activity can have many users.(consider calling it subscribed activities?)
     activities = db.relationship("Activity", secondary="subscribers", back_populates="users")
     # allows one to see the activites_created by a specific user
-    # activities_created = db.relationship("Activity", back_populates="creator")
+    activities_created = db.relationship("Activity", back_populates="creator")
 
     def __repr__(self):
         return f"<User user_id={self.user_id} email={self.email}>"
@@ -48,10 +48,10 @@ class Activity(db.Model):
     #one activity can have many users, and one users can have many activities- hence list of objects will be returned. 
     users = db.relationship("User", secondary="subscribers", back_populates="activities")
     # allows one to see the activities that a user has created. 
-    # creator = db.relationship("User", back_populates="activities_created")
+    creator = db.relationship("User", back_populates="activities_created")
 
     def __repr__(self):
-        return f"<Activity activity_id={self.activity_id} activity_name={self.activity_name} subscribers={self.users}>"
+        return f"<Activity activity_id={self.activity_id}  activity_date={self.activity_date} activity_name={self.activity_name} subscribers={self.users}>"
 
 class Subscriber(db.Model):
     """Association table.Multiple users can sign up for the same activity created by one user. 
@@ -72,9 +72,7 @@ class Address(db.Model):
     __tablename__ = "addresses" 
 
     address_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    street_num = db.Column(db.Integer, nullable=False)
-    suit_num = db.Column(db.String(5), nullable=True)
-    street_name = db.Column(db.String(25), nullable=False)
+    street_address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(25), nullable=False)
     state = db.Column(db.String(2), nullable=False)
     zip_code = db.Column(db.Integer, nullable=False)
@@ -85,7 +83,7 @@ class Address(db.Model):
     activities = db.relationship("Activity", back_populates="address")
 
     def __repr__(self):
-        return f"<Address address_id={self.address_id} street_name={self.street_name}>"
+        return f"<Address address_id={self.address_id} street_address={self.street_address}>"
 
 def connect_to_db(flask_app, db_uri="postgresql:///activity_matcher", echo=False):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri

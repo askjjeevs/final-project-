@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}User Account{% endblock %}
+
+{% block body %}
+
+<h2>
+    Tribe User Account Details
+</h2>
+<h2>
+    Customize your Tribe profile 
+</h2>
+
+    <p>Username: {{ user.username }}</p>
+    <p>
+    <img id="user-profile-images" src="{{ user.user_image_path }}" alt="Stock Image of a User"
+        style="width: 200px; height: 200px;">
+    </p>
+<p>
+    Email Address: {{ user.email }}
+</p>
+<p>
+    Password: {{ user.password }}
+</p>
+<p>
+    First Name: {{ user.fname }}
+</p>
+<p>
+    Last Name: {{ user.lname }}
+</p>
+
+{% if user.address != None %}
+<p>
+    Street address: {{ user.address.street_address }}
+</p>
+<p>
+    City: {{ user.address.city }}
+</p>
+<p>
+    State: {{ user.address.state }}
+</p>
+<p>
+    Zip Code: {{ user.address.zip_code }}
+</p>
+
+{% endif %}
+<p>
+    Describe Yourself : {{ user.user_description }}
+</p>
+
+<a href="/update_account" class="button">Personal Profile: View and edit your personal information </a><br>
+
+
+
+
+{% endblock %}

@@ -8,8 +8,8 @@
     "address_id": 3,
     "user_image_path": "/static/images/user_profile_stock.jpg",
     "user_description": "I am a high school english teacher with 5 years of experience. I enjoy "
-},
-{
+    }  ,
+    {
     "username": "ksmith",
     "email": "ksmith@example.com",
     "password": "password123",
@@ -18,8 +18,8 @@
     "address_id": 2,
     "user_image_path": "/static/images/user_profile_stock.jpg",
     "user_description": "I am a graphic designer and love all things creative."
-},
-{
+    },
+    {
     "username": "mjones",
     "email": "mjones@example.com",
     "password": "password123",
@@ -28,9 +28,8 @@
     "address_id": 1,
     "user_image_path": "/static/images/user_profile_stock.jpg",
     "user_description": "I am a student studying anthropology."
-    
-},
-{
+    },
+    {
     "username": "awilliams",
     "email": "awilliams@example.com",
     "password": "password123",
@@ -39,8 +38,8 @@
     "address_id": 5,
     "user_image_path": "/static/images/user_profile_stock.jpg",
     "user_description": "I am a professional glass blower and enjoy socializing."
-},
-{
+    },
+    {
     "username": "rwilson",
     "email": "rwilson@example.com",
     "password": "password123",
@@ -49,5 +48,51 @@
     "address_id": 4,
     "user_image_path": "/static/images/user_profile_stock.jpg",
     "user_description": "I am a sales manager and like to play sports in my free time."
-}
-]
+    },
+    {
+    "username": "nmendoza",
+    "email": "nmendoza@example.com",
+    "password": "password123",
+    "fname": "Nadia",
+    "lname": "Mendoza",
+    "address_id": 6,
+    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_description": "I am a software engineer and enjoy hiking in my free time."
+    },
+    {
+    "username": "ndutta",
+    "email": "ndutta@example.com",
+    "password": "password123",
+    "fname": "Nita",
+    "lname": "Dutta",
+    "address_id": 7,
+    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_description": "My name is Nita, and I'm a seamstress from Mumbai. I specialize in creating traditional Indian clothing, but I also enjoy designing modern outfits with a cultural twist."
+    },
+    {
+    "username": "mlim",
+    "email": "mlim@example.com",
+    "password": "password123",
+    "fname": "Min",
+    "lname": "Lim",
+    "address_id": 8,
+    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_description": "I am a waitress in a cafe. I moved here from Seoul, South Korea 5 years ago."
+    },
+    {
+    "username": "jlee",
+    "email": "jlee@example.com",
+    "password": "password123",
+    "fname": "Jamie",
+    "lname": "Lee",
+    "address_id": 9,
+    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_description": "I am a recent graduate with a degree in finance and am currently job hunting."
+    }
+    ]
+    
+    
+    
+    
+    
+    

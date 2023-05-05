@@ -29,16 +29,13 @@ with open('data/users.json') as f:
 addresses_in_db = []
 for address in address_data:
 
-    street_num, suit_num, street_name, city, state, zip_code = (
-        address['street_num'],
-        address['suit_num'],
-        address['street_name'],
+    street_address, city, state, zip_code = (
+        address['street_address'],
         address['city'],
         address['state'],
         address['zip_code'])
     
-    db_address = crud.create_address(street_num=street_num, suit_num=suit_num, 
-                      street_name=street_name, city=city, state=state, zip_code=zip_code)
+    db_address = crud.create_address(street_address=street_address, city=city, state=state, zip_code=zip_code)
     addresses_in_db.append(db_address)
 
 db.session.add_all(addresses_in_db)
@@ -86,7 +83,7 @@ db.session.add_all(activities_in_db)
 db.session.commit()
 
 subscribers_in_db = []
-for idx in range(5):
+for idx in range(10):
     # choose a random user & activity
     user = choice(users_in_db)
     activity = choice(activities_in_db)
@@ -98,18 +95,3 @@ for idx in range(5):
 db.session.add_all(subscribers_in_db)
 db.session.commit()
 
-# for idx in range(5):
-# users_in_db[idx].activities.append(activities_in_db[idx])
-# db.session.add_all(users_in_db)
-# db.session.commit()
-
-# user1 = User.query.get(1)
-# activity1 = Activity.query.get(1)
-# subscriber1 = Subscriber(activity_id=1, user_id=1)
-# db.session.add(subscriber1)
-# db.session.commit()
-# print(f"This is subcriber one, {subscriber1}.")
-# print(user1.activities)
-# print(activity1.users)
-
-    

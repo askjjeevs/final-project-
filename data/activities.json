@@ -15,7 +15,7 @@
       "activity_type": "Culinary",
       "activity_date": "2023-05-15",
       "activity_image_path":"/static/images/knife_skills.jpg",
-      "activity_description": "Learn to make delicious and healthy meals and mastering the knife safely and with ease."
+      "activity_description": "Learn to make delicious and healthy meals while mastering the knife safely and with ease. Learn with me as I practice the skills I learn through my online class. "
     },
     {
       "address_id": 3,
@@ -46,14 +46,50 @@
     },
     
     {
-      "address_id": 5,
-      "created_by": 3,
+      "address_id": 6,
+      "created_by": 5,
       "activity_name": "Farmer's Market",
       "activity_type": "Outdoor",
       "activity_date": "2023-04-25",
       "activity_image_path":"/static/images/farmers_market.jpg",
       "activity_description": "Come along and get some locally grown fresh vegetables. It's also a great time to meet local artisan "
-    }
+    },
+  
+    {
+      "address_id": 7,
+      "created_by": 4,
+      "activity_name": "Movie Night at Piedmont Park",
+      "activity_type": "Entertainment",
+      "activity_date": "2023-05-10",
+      "activity_image_path":"/static/images/movie_park.jpg",
+      "activity_description": "Bring a blanket and some snacks and enjoy a movie under the stars in the local park. A great opportunity to meet neighbords and make new friends."
+      },
+      {
+      "address_id": 8,
+      "created_by": 3,
+      "activity_name": "Walking with furry friends!",
+      "activity_type": "Outoor",
+      "activity_date": "2023-06-01",
+      "activity_image_path":"/static/images/dog_walk.jpg",
+      "activity_description": "Join us for a refreshing morning dog walk with your furry friends! This activity is perfect for dog owners who want to socialize their dogs and meet other dog owners in the community. We'll be walking through the neighborhood park trails and exploring the neighborhood, all while enjoying the fresh air and exercise."
+      },
+      {
+      "address_id": 9,
+      "created_by": 2,
+      "activity_name": "Morning walk on local trail",
+      "activity_type": "Fitness",
+      "activity_date": "2023-05-20",
+      "activity_image_path":"/static/images/morning_walk.jpg",
+      "activity_description": "Daily walks by the Chattahoochee river or local trail"
+      },
+      {
+      "address_id": 10,
+      "created_by": 1,
+      "activity_name": "Bike riding on Rocket Trail ",
+      "activity_type": "Fitness",
+      "activity_date": "2023-05-22",
+      "activity_image_path":"/static/images/bike_ride.jpg",
+      "activity_description": "Riding bikes is a fun and exciting way to explore the outdoors while also getting a great workout. Join in for a leisurely ride through scenic routes, stopping along the way to take in the sights and snap some photos. ."
+      }
+  ]
     
-    
-]

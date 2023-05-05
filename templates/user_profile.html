@@ -2,25 +2,61 @@
 {% block title %}User Profile View{% endblock %}
 
 {% block body %}
-  <h1>User Profile viewed by other users</h1>
+  <h1>User Profile </h1>
   <div>
     <ul>
       <li>
-        <p>Username: {{ user.username }}</p> 
+        <p> Name: {{ user.fname }} {{ user.lname }}</p> 
       </li>
       <li>
-        <p>Email: {{ user.email }}</p>
+        <p> Location: {{ user.address.city }}</p>
       </li>
+      
       <p>
         <img id="user-profile-images"
-        src="{{ user.user_image_path }}" alt="Stock Image of a User" style="width: 200px; height: 200px;">>
+        src="{{ user.user_image_path }}" alt="Stock Image of a User" style="width: 200px; height: 200px;">
       </p>
+      <p>
+        My bio: {{ user.user_description }}
+      </p>
+
+      <p> 
+        Activities I'm attending: 
+      </p>
+      {% if activities %}
+      <ul>
+        {% for activity in activities %}
+        <li>{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
+        <p>
+          <img id="activity-images" src="{{ activity.activity_image_path }}" alt="Image relating to activity"
+            style="width: 200px; height: 200px;">
+        </p>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>You have not subscribed to any activities yet.</p>
+      {% endif %}
+      
       <li>
-        <p>Name: {{ user.fname }} {{ user.lname }}</p>
-      </li>
-      <li> 
-        <p>A little bit about me: {{ user.user_description }}</p>
-      </li>
+        <p>
+           Activities I'm hosting:
+        </p>
+        {% if created_activities %}
+        <ul>
+          {% for created_activity in created_activities %}
+          <li>{{ created_activity.activity_name }} - {{ created_activity.activity_type }} - {{ created_activity.activity_date}}
+          </li>
+          <p>
+            <img id="activity-images" src="{{ created_activity.activity_image_path }}" alt="Image relating to activity"
+              style="width: 200px; height: 200px;">
+          </p>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>
+          You have not creaed any activities yet.
+        </p>
+        {% endif %}
     </ul>
   </div>
 

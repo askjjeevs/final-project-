@@ -1,43 +1,63 @@
 [
     {
-        "street_num": 123,
-        "suit_num": null,
-        "street_name": "Main St",
-        "city": "Anytown",
-        "state": "GA",
-        "zip_code": 12345
+        "street_address": "123 Your St",
+        "city": "Your City",
+        "state": "ZZ",
+        "zip_code": 11111
       },
       {
-        "street_num": 456,
-        "suit_num": 101,
-        "street_name": "Maple Ave",
+        "street_address": "456 Maple Ave #101",
         "city": "Sometown",
         "state": "NY",
         "zip_code": 67890
       },
       {
-        "street_num": 789,
-        "suit_num": null,
-        "street_name": "Oak St",
+        "street_address": "789 Oak St",
         "city": "Otherplace",
         "state": "TX",
         "zip_code": 54321
       },
       {
-        "street_num": 111,
-        "suit_num": null,
-        "street_name": "Pine St",
+        "street_address": "111 Pine St",
         "city": "Somecity",
         "state": "WA",
         "zip_code": 98001
       },
       {
-        "street_num": 222,
-        "suit_num": 303,
-        "street_name": "Cedar St",
+        "street_address": "222 Cedar St #303",
         "city": "Newplace",
         "state": "CA",
         "zip_code": 91234
+      },
+      {
+        "street_address": "333 Elm St",
+        "city": "Anothercity",
+        "state": "FL",
+        "zip_code": 33445
+      },
+      {
+        "street_address": "444 Birch Rd ",
+        "city": "Somewhere",
+        "state": "MA",
+        "zip_code": 12348
+      },
+      {
+        "street_address": "555 Holly Dr",
+        "city": "Anyplace",
+        "state": "IL",
+        "zip_code": 60601
+      },
+      {
+        "street_address": "666 Maple St",
+        "city": "Anotherplace",
+        "state": "PA",
+        "zip_code": 19001
+      },
+      {
+        "street_address": "808 Cherry Ln",
+        "city": "Everytown",
+        "state": "OH",
+        "zip_code": 43210
       }
     ]
   

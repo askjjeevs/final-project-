@@ -18,26 +18,11 @@
 
 <div 
   class="topnav">
-  <a href="/create_new_account" class="button">Create new account</a>
-
   {% if user and session["user_email"] == user.email %}
     <a href="/users/{{ user.user_id }}">View your User Dashboard</a>
-    <a href="/logout">Logout</a>
-</div>
-
-<div>
+    <a href="/log_out">Logout</a>
   {% else %}
-    <form action="/login" method="POST">
-      <p>
-        Email <input type="text" name="email">
-      </p>
-      <p>
-        Password <input type="password" name="password">
-      </p>
-      <p>
-        <input type="submit">
-      </p>
-    </form>
+  <a href="/log_in_page">Log In</a>
   {% endif %}
 </div>  
 
