@@ -3,11 +3,11 @@
 from model import db, User, Address, Activity, Subscriber, connect_to_db
 
  # USERS 
-def create_user(username, email, password, fname, lname, user_image_path=None, user_description=None):
+def create_user(username, email, password, fname, address_id, lname, user_image_path=None, user_description=None):
     """Create and return a new user."""
     
     user = User(username=username, email=email, password=password, 
-                fname=fname, lname=lname, user_image_path=user_image_path, user_description=user_description)
+                fname=fname, lname=lname, address_id=address_id, user_image_path=user_image_path, user_description=user_description)
 
     return user
 

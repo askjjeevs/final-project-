@@ -75,7 +75,7 @@ class Address(db.Model):
     street_address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(25), nullable=False)
     state = db.Column(db.String(2), nullable=False)
-    zip_code = db.Column(db.Integer, nullable=False)
+    zip_code = db.Column(db.String(5), nullable=False)
 
     #one user has one address and one address can have multiple user- every user has one address 
     users = db.relationship("User", back_populates="address")

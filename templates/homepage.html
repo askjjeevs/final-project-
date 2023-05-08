@@ -19,7 +19,7 @@
 <div 
   class="topnav">
   {% if user and session["user_email"] == user.email %}
-    <a href="/users/{{ user.user_id }}">View your User Dashboard</a>
+    <a href="/users/{{ user.useEditsr_id }}">View your User Dashboard</a>
     <a href="/log_out">Logout</a>
   {% else %}
   <a href="/log_in_page">Log In</a>

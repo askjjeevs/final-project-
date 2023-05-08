@@ -25,6 +25,7 @@ def homepage():
     activities = Activity.query.all()
 
     return render_template('homepage.html', user = user, activities=activities)
+    
 
 @app.route("/sign_up_page")
 def display_sign_up():
@@ -39,12 +40,16 @@ def sign_up_new_user():
     password = request.form.get("password")
     fname = request.form.get("fname")
     lname = request.form.get("lname")
+    street_address = (" ")
+    city = (" ")
+    state = (" ")
+    zip_code = (" ")
 
     user = crud.get_user_by_email(email)
     if user:
         flash("An account with that email already exists. Try another email.")
     else:
-        user = crud.create_user(username, email, password, fname,lname)
+        user = crud.create_user(username, email, password, fname,lname, street_address, city, state, zip_code)
         db.session.add(user)
         db.session.commit()
         flash("Account created! Please log in.")
@@ -121,7 +126,7 @@ def display_update_account_page():
     """View update account page"""
 
     user = crud.get_user_by_id(session["user_id"])
-
+   
     return render_template('update_account.html', user=user)
 
 @app.route("/update_account_form", methods=["POST"])
