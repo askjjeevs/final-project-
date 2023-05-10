@@ -26,6 +26,7 @@ class User(db.Model):
     # allows one to see the activites_created by a specific user
     activities_created = db.relationship("Activity", back_populates="creator")
 
+
     def __repr__(self):
         return f"<User user_id={self.user_id} email={self.email}>"
 
@@ -49,23 +50,23 @@ class Activity(db.Model):
     users = db.relationship("User", secondary="subscribers", back_populates="activities")
     # allows one to see the activities that a user has created. 
     creator = db.relationship("User", back_populates="activities_created")
-
+ 
     def __repr__(self):
         return f"<Activity activity_id={self.activity_id}  activity_date={self.activity_date} activity_name={self.activity_name} subscribers={self.users}>"
 
 class Subscriber(db.Model):
-    """Association table.Multiple users can sign up for the same activity created by one user. 
+    """Middle table.Multiple users can sign up for the same activity created by one user. 
     This table hold the user_id and the activity_id for each subscription"""
 
     __tablename__ = "subscribers"
 
     subscriber_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    activity_id = db.Column(db.Integer, db.ForeignKey("activities.activity_id"))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    activity_id = db.Column(db.Integer, db.ForeignKey("activities.activity_id"), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=True)
 
     def __repr__(self):
         return f"<This is the subscriber. subscriber_id={self.subscriber_id} user_id={self.user_id}"
-    
+   
 class Address(db.Model):
     """Addresses for activities and users"""
     

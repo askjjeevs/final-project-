@@ -240,7 +240,15 @@ def display_activity_details(activity_id):
 
     activity = crud.get_activity_by_id(activity_id)
 
-    return render_template("activity_details.html", activity=activity)
+    is_logged_in_user_subscribed = False
+    if "user_id" in session:
+        for user in activity.users:
+            if user.user_id == session["user_id"]:
+                is_logged_in_user_subscribed = True
+    else:
+        flash("Please log in to subscribe to activities.")
+
+    return render_template("activity_details.html", activity=activity, is_logged_in_user_subscribed=is_logged_in_user_subscribed)
 
 @app.route("/subscribe/<activity_id>")
 def subscribe_activity(activity_id):
