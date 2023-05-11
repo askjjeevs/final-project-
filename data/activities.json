@@ -30,7 +30,7 @@
       "address_id": 4,
       "created_by": 4,
       "activity_name": "Hike to the Bamboo Forest",
-      "activity_type": "Fitness",
+      "activity_type": "Fitness/Exercise",
       "activity_date": "2023-05-22",
       "activity_image_path":"/static/images/hike.jpg",
       "activity_description": "Join a group of outdoor enthusiasts for a scenic hike in the mountains."
@@ -39,7 +39,7 @@
       "address_id": 5,
       "created_by": 5,
       "activity_name": "Puzzles & Wine",
-      "activity_type": "Games",
+      "activity_type": "Games/Gaming",
       "activity_date": "2023-05-25",
       "activity_image_path":"/static/images/puzzle.jpg",
       "activity_description": "Tackle that 5000 piece world map puzzle."
@@ -49,7 +49,7 @@
       "address_id": 6,
       "created_by": 5,
       "activity_name": "Farmer's Market",
-      "activity_type": "Outdoor",
+      "activity_type": "Shopping",
       "activity_date": "2023-04-25",
       "activity_image_path":"/static/images/farmers_market.jpg",
       "activity_description": "Come along and get some locally grown fresh vegetables. It's also a great time to meet local artisan "
@@ -77,7 +77,7 @@
       "address_id": 9,
       "created_by": 2,
       "activity_name": "Morning walk on local trail",
-      "activity_type": "Fitness",
+      "activity_type": "Fitness/Exercise",
       "activity_date": "2023-05-20",
       "activity_image_path":"/static/images/morning_walk.jpg",
       "activity_description": "Daily walks by the Chattahoochee river or local trail"
@@ -86,10 +86,56 @@
       "address_id": 10,
       "created_by": 1,
       "activity_name": "Bike riding on Rocket Trail ",
-      "activity_type": "Fitness",
+      "activity_type": "Fitness/Exercise",
       "activity_date": "2023-05-22",
       "activity_image_path":"/static/images/bike_ride.jpg",
-      "activity_description": "Riding bikes is a fun and exciting way to explore the outdoors while also getting a great workout. Join in for a leisurely ride through scenic routes, stopping along the way to take in the sights and snap some photos. ."
+      "activity_description": "Riding bikes is a fun and exciting way to explore the outdoors while also getting a great workout. Join in for a leisurely ride through scenic routes, stopping along the way to take in the sights and snap some photos."
+      },
+      {
+        "address_id": 1,
+        "created_by": 1,
+        "activity_name": "Photographing birds on Chatahoochee river trail ",
+        "activity_type": "Photography",
+        "activity_date": "2023-06-22",
+        "activity_image_path": "/static/images/photography.jpg",
+        "activity_description": "Enjoying nature and practicing some photography skills I've learned. Would love to share this time with new friends and enjoy the art of the capturing nature in a picture."
+      },
+      {
+        "address_id": 2,
+        "created_by": 2,
+        "activity_name": "Community Garden Clean Up ",
+        "activity_type": "Volunteer",
+        "activity_date": "2023-05-31",
+        "activity_image_path": "/static/images/garden.jpg",
+        "activity_description": "Our community garden needs a little love, i'll be heading over to spend some time cleaning it up and watering the plants. Always happy to have other's join me."
+      }, 
+      {
+        "address_id": 3,
+        "created_by": 3,
+        "activity_name": "Vintage Shopping Adventures ",
+        "activity_type": "Shopping",
+        "activity_date": "2023-06-22",
+        "activity_image_path": "/static/images/vintage_shopping.jpg",
+        "activity_description": "Enjoying nature and practicing some photography skills I've learned. Would love to share this time with new friends and enjoy the art of the capturing nature in a picture."
+      },
+      {
+        "address_id": 4,
+        "created_by": 4,
+        "activity_name": "Candle Making Night",
+        "activity_type": "DIY/Crafting",
+        "activity_date": "2023-07-01",
+        "activity_image_path": "/static/images/candle_making.jpg",
+        "activity_description": "Enjoying nature and practicing some photography skills I've learned. Would love to share this time with new friends and enjoy the art of the capturing nature in a picture."
+      },
+      {
+        "address_id": 5,
+        "created_by": 5,
+        "activity_name": "Indoor Climbing (Beginner) ",
+        "activity_type": "Indoor",
+        "activity_date": "2023-06-22",
+        "activity_image_path": "/static/images/indoor_climbing.jpg",
+        "activity_description": "I've always to try indoor climbing. If you've wanted to try it out as well and would love the company.....Join in!  "
       }
+
   ]
     

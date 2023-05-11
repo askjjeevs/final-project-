@@ -106,3 +106,16 @@ from user_Dashboard     <!-- Your Location: {{ user.address.city }} -->
 
 things to add- 
 Two way subscribe feature- someone can demonstrate interest and then the other person can accept their interest 
+
+
+    {% for activity in activities %}
+      <ul>
+          <li>
+            <p><a href="/activities/{{ activity.activity_id }}">{{ activity.activity_name }}</a></p>
+            <p>{{ activity.activity_date }}</p>
+            <p><img id="activity-images"
+              src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;"></p>
+          </li>
+      </ul>
+    
+    {% endfor %}

@@ -27,24 +27,39 @@
   </div>  
 
   <!-- Flexbox to display activities in three columns or use react trading cards with grid -->
-  <div>
-  <h3>
-    Upcoming TribeConnect events
-  </h3>
+  <div id="activity-container">
+    <h3>Upcoming TribeConnect events</h3>
+  <!-- <ActivityFilter activities={activities} /> -->
+      <div id="activity-filter">
+        <label for="activity-filter">Filter activities by type:</label>
+        <select id="activity-filter" name="activity_type-filter" required>
+          <option value="Fitness/Exercise">Fitness/Exercise</option>
+          <option value="Culinary">Culinary</option>
+          <option value="Arts">Art</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Games/Gaming">Games/Gaming</option>
+          <option value="Outdoor">Outdoor</option>
+          <option value="Indoor">Indoor</option>
+          <option value="Dancing">Dancing</option>
+          <option value="Meditation">Meditation</option>
+          <option value="Gardening">Gardening</option>
+          <option value="DIY/Crafting">DIY/Crafting</option>
+          <option value="Photography">Photography</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Volunteering">Volunteering</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
 
-    {% for activity in activities %}
-      <ul>
-          <li>
-            <p><a href="/activities/{{ activity.activity_id }}">{{ activity.activity_name }}</a></p>
-            <p>{{ activity.activity_date }}</p>
-            <p><img id="activity-images"
-              src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;"></p>
-          </li>
-      </ul>
-    
-    {% endfor %}
+
   </div>
 </div>
+<div id="activities-to-filter" data-activities-to-filter="{{ activities }}"></div>
+<script type=text/javascript>
+    const activities={{ activities|tojson|safe }};
+</script>
+<script type="text/jsx" src="/static/jsx/filter.jsx"></script>
+
 
 
 {% endblock %}

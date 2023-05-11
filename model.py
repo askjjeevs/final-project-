@@ -53,6 +53,18 @@ class Activity(db.Model):
  
     def __repr__(self):
         return f"<Activity activity_id={self.activity_id}  activity_date={self.activity_date} activity_name={self.activity_name} subscribers={self.users}>"
+    
+    def to_json(self):
+        return {
+            "activity_name": self.activity_name,
+            "activity_type": self.activity_type,
+            "activity_image_path": self.activity_image_path,
+            "activity_description": self.activity_description,
+            "address_city": self.address.city,
+            "creator_fname": self.creator.fname,
+            "activity_id": int(self.activity_id),
+            "activity_date": self.activity_date.strftime("%Y%m%d"),
+        }    
 
 class Subscriber(db.Model):
     """Middle table.Multiple users can sign up for the same activity created by one user. 

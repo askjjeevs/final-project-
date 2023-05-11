@@ -1,4 +1,4 @@
-from flask import (Flask, render_template, request, flash, session, redirect, jsonify)
+from flask import (Flask, render_template, request, flash, session, redirect, jsonify, json)
 from model import db,  User, Address, Activity, Subscriber, connect_to_db
 import crud as crud
 import cloudinary.uploader
@@ -22,10 +22,12 @@ def homepage():
     if "user_id" in session:
         user = crud.get_user_by_email(session["user_email"])
         
-    activities = Activity.query.all()
+    #activities = Activity.query.all()
 
-    return render_template('homepage.html', user = user, activities=activities)
-    
+    records = [activity.to_json() for activity in Activity.query.all()]
+
+    return render_template('homepage.html', user=user, activities=json.dumps(records))
+
 
 @app.route("/sign_up_page")
 def display_sign_up():
@@ -249,6 +251,8 @@ def display_activity_details(activity_id):
         flash("Please log in to subscribe to activities.")
 
     return render_template("activity_details.html", activity=activity, is_logged_in_user_subscribed=is_logged_in_user_subscribed)
+
+
 
 @app.route("/subscribe/<activity_id>")
 def subscribe_activity(activity_id):
