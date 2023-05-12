@@ -7,6 +7,7 @@ from model import db, User, Address, Activity, Subscriber, connect_to_db
 import crud as crud
 import server 
 from flask import Flask
+from passlib.hash import argon2
 
 #os.system to automatically dropdb for us
 os.system('dropdb activity_matcher')
@@ -55,7 +56,7 @@ for user in user_data:
         user['user_description']
         )
     
-    db_user = crud.create_user(username=username, email=email, password=password, 
+    db_user = crud.create_user(username=username, email=email, password=argon2.hash(password),
                                fname=fname, lname=lname, address_id=address_id, user_image_path=user_image_path, user_description=user_description)
     users_in_db.append(db_user)
 

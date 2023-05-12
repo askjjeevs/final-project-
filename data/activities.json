@@ -5,6 +5,7 @@
       "activity_name": "Yoga in the park",
       "activity_type": "Fitness",
       "activity_date": "2023-05-10",
+      "activity_time": "06:00:PM",
       "activity_image_path":"/static/images/yoga.jpg",
       "activity_description": "A beginner yoga class for those looking to improve flexibility and balance right at the local park."
     },

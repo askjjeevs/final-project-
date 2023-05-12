@@ -3,6 +3,7 @@ from model import db,  User, Address, Activity, Subscriber, connect_to_db
 import crud as crud
 import cloudinary.uploader
 import os
+from passlib.hash import argon2
 
 CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
 CLOUDINARY_SECRET = os.environ['CLOUDINARY_SECRET']
@@ -19,7 +20,7 @@ def homepage():
     """View homepage(view note)"""
     
     user = None
-    if "user_id" in session:
+    if "user_email" in session:
         user = crud.get_user_by_email(session["user_email"])
         
     #activities = Activity.query.all()
@@ -47,7 +48,7 @@ def sign_up_new_user():
     state = (" ")
     zip_code = (" ")
 
-    user = crud.get_user_by_email(email)
+    user = crud.get_user_by_email(email, argon2.hash(password))
     if user:
         flash("An account with that email already exists. Try another email.")
     else:
@@ -74,6 +75,11 @@ def process_log_in():
     user = crud.get_user_by_email(email)
     if not user or user.password != password:
         flash("The email or password you entered was either not in our system or incorrect. Please try again")
+        # return redirect('create_account')
+
+        if not argon2.verify(password, user.password):
+            flash("Incorrect password, try again.")
+            return redirect("/login")
     else:
         session["user_id"] = user.user_id
         session["user_email"] = user.email

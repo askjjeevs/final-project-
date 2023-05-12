@@ -41,6 +41,7 @@ class Activity(db.Model):
     activity_name = db.Column(db.String(100), nullable=False)
     activity_type = db.Column(db.String(100), nullable=False)
     activity_date = db.Column(db.DateTime, nullable=True)
+    activity_time = db.Column(db.Time, nullable=True)
     activity_image_path = db.Column(db.String)
     activity_description = db.Column(db.Text)
 
@@ -64,6 +65,7 @@ class Activity(db.Model):
             "creator_fname": self.creator.fname,
             "activity_id": int(self.activity_id),
             "activity_date": self.activity_date.strftime("%Y%m%d"),
+            "activity_time": self.activity_time.strftime("%H:%M:%S") if self.activity_time else None,
         }    
 
 class Subscriber(db.Model):

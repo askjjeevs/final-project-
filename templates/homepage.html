@@ -2,34 +2,28 @@
 {% block title %}TribeConnect Homepage {% endblock %}
 
 {% block body %}
+
 <div id="root">
   <div class="spacer"></div> <!-- Add a div element for spacing -->
 
-    <h1>
-      Welcome to Tribe Connect 
-    </h1>
+    <h1>Welcome to Tribe Connect</h1>
       <p>
-        Here's where you can build a community of curious minds and open hearts,
-      </p>
-      <p>discover the beauty of shared experiences and meaninful relationships, 
-      </p>
-      <p>one connection at a time.
+        Here's where you can build a community of curious minds and open hearts,discover the beauty of shared experiences and meaninful relationships, one connection at a time.
       </p>
 
   <div 
     class="topnav">
     {% if user and session["user_email"] == user.email %}
-      <a href="/users/{{ user.user_id }}">View your User Dashboard</a>
-      <a href="/log_out">Logout</a>
+      <p><a href="/users/{{ user.user_id }}"> User Dashboard </a></p>
+      <p><a href="/log_out">Logout</a></p>
     {% else %}
     <a href="/log_in_page">Log In</a>
     {% endif %}
   </div>  
 
-  <!-- Flexbox to display activities in three columns or use react trading cards with grid -->
   <div id="activity-container">
     <h3>Upcoming TribeConnect events</h3>
-  <!-- <ActivityFilter activities={activities} /> -->
+    
       <div id="activity-filter">
         <label for="activity-filter">Filter activities by type:</label>
         <select id="activity-filter" name="activity_type-filter" required>

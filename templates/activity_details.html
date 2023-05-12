@@ -15,6 +15,7 @@
 	<h2>{{ activity.activity_name }}</h2>
 	<p>Host of activity: {{ activity.creator.fname }}</p>
 	<p>Date of activity: {{ activity.activity_date }}</p>
+	<p>Time: {{ activity.activity_time }}</p>
 	<p>Type of activity: {{ activity.activity_type }}</p>
 	<p>Description: {{ activity.activity_description }}</p>
 	<p>Address:</p>
@@ -29,7 +30,8 @@
         src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">
     </p>
 	
-	
+	<div className="container-fluid">
+		<div className="row justify-content-center">
 	<h2>Subscribers</h2>
 	{% if activity.users %}
 	<ul>
@@ -43,15 +45,9 @@
 	{% else %}
 		<p>No subscribers yet.</p>
 	{% endif %}
-
+	</div>
 	<div id="subscribe-section" data-logged-in-user="{{ is_logged_in_user_subscribed }}" data-activity-id="{{ activity.activity_id }}"></div>
 
 	<script type="text/jsx" src="/static/jsx/subscribe.jsx"></script>
 
 {% endblock %}
-
-
-
-
-
-

@@ -119,3 +119,18 @@ Two way subscribe feature- someone can demonstrate interest and then the other p
       </ul>
     
     {% endfor %}
+
+    {/* <button
+                className="btn-dark text-white p-1 px-3 mx-5 fw-bold btn"
+                onClick={() => setItem(Data)}
+            >
+                All
+            </button> */}
+
+
+  {/* <button
+                className="btn-dark text-white p-1 px-3 mx-5 fw-bold btn"
+                onClick={() => setItem(Data)}
+            >
+                All
+            </button> */}
