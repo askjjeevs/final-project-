@@ -1,52 +1,44 @@
 {% extends "base.html" %}
+
 {% block title %}User Dashboard{% endblock %}
 {% block body %}
-  <h1>
-    {{user.fname}}! Welcome to your User Dashboard
-  </h1>
-  <p>
-    Your username: {{ user.username }}
-  </p>
-  <p>
-    Your email: {{ user.email }}
-  </p>
-  <p>
-    <img id="user-profile-images" src="{{ user.user_image_path }}" alt="Stock Image of a User" style="width: 200px; height: 200px;">
-  </p>
-  
-  <p>
-  <a href="/account_details/{{ user.user_id }}" class="button">Personal Account: You can view and edit your personal information </a><br>
-  </p>
-  <p>
-  <a href="/user_profile/{{ user.user_id }}" class="button">View your TribeUser profile </a><br>
-  </p>
-  <p>
-  <a href="/create_new_activity/" class="button">Create a new activity</a><br>
-  </p>
-  <h2>
-     Activities you subscribed to:
-  </h2>
-  {% if activities %}
-    <ul>
-      {% for activity in activities %}
-        <li>{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
-        <p>
-          <img id="activity-images"
-            src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">
-        </p>     
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>You have not subscribed to any activities yet.</p>
-  {% endif %}
 
+<div>
+  <h1>{{user.fname}}! Welcome to your User Dashboard</h1>
+    <div class="card">
+      <p>Your username: {{ user.username }}</p>
+      <p>Your email: {{ user.email }}</p>
+      <p>
+        <img id="user-profile-images" src="{{ user.user_image_path }}" alt="Default Image of a User" style="width: 200px; height: 200px;">
+      </p>
+    </div>
+      <button type="button" class="btn btn-outline-primary"><a href="/account_details/{{ user.user_id }}" </a>View/Edit Account</button>
+      <button type="button" class="btn btn-outline-primary"><a href="/user_profile/{{ user.user_id }}" </a>View TribeUser profile</button>
+
+        <p><a href="/user_profile/{{ user.user_id }}" class="button">View your TribeUser profile </a></p>
+      <p><a href="/create_new_activity" class="button">Create a new activity</a></p>
+    </div>
+  <div class="card">
+    <h2>Activities you subscribed to:</h2>
+    {% if activities %}
+      <ul>
+        {% for activity in activities %}
+          <li class="card-body">{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
+          <img id="activity-images" src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">   
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You have not subscribed to any activities yet.</p>
+    {% endif %}
+  </div>
+  <div class="card">
   <h2>
     Activities you are hosting:
   </h2>
   {% if created_activities %}
     <ul>
       {% for created_activity in created_activities %}
-        <li>{{ created_activity.activity_name }} - {{ created_activity.activity_type }} - {{ created_activity.activity_date}}</li>
+        <li class="card-body">{{ created_activity.activity_name }} - {{ created_activity.activity_type }} - {{ created_activity.activity_date}}</li>
         <p>
           <img id="activity-images"
             src="{{ created_activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">
@@ -60,8 +52,10 @@
       You have not creaed any activities yet.
     </p>
   {% endif %}
+  </div>
  
 {% endblock %}
+</div>
 
 
 

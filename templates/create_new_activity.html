@@ -36,7 +36,7 @@
       <input type="date" id="activity_date" name="activity_date" ><br>
     </p>
       <label for="activity_time">Time of Activity: </label>
-      <input type="time" id="activity_time" name="activity_time" value="{{ activity.activity_date.strftime('%H:%M:%S') }}"><br>
+      <input type="time" id="activity_time" name="activity_time" ><br>
     <p>
       <label for="address">Address</label>
     <p>
@@ -114,6 +114,8 @@
     <p>
       <textarea name="activity_description" rows="10" cols="40"></textarea><br>  
     </p>
+
+    <input type="file" name="my-file">
     
      <input type="submit" value= "Add a new TribeConnect activity">
 

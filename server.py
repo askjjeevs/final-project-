@@ -20,11 +20,9 @@ def homepage():
     """View homepage(view note)"""
     
     user = None
-    if "user_email" in session:
-        user = crud.get_user_by_email(session["user_email"])
+    if "user_id" in session:
+        user = crud.get_user_by_id(session["user_id"])
         
-    #activities = Activity.query.all()
-
     records = [activity.to_json() for activity in Activity.query.all()]
 
     return render_template('homepage.html', user=user, activities=json.dumps(records))
@@ -73,13 +71,10 @@ def process_log_in():
     password = request.form.get("password")
 
     user = crud.get_user_by_email(email)
-    if not user or user.password != password:
+    if not user or not argon2.verify(password, user.password):
         flash("The email or password you entered was either not in our system or incorrect. Please try again")
         # return redirect('create_account')
-
-        if not argon2.verify(password, user.password):
-            flash("Incorrect password, try again.")
-            return redirect("/login")
+        return redirect("/log_in_page")
     else:
         session["user_id"] = user.user_id
         session["user_email"] = user.email

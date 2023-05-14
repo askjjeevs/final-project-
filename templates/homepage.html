@@ -11,15 +11,6 @@
         Here's where you can build a community of curious minds and open hearts,discover the beauty of shared experiences and meaninful relationships, one connection at a time.
       </p>
 
-  <div 
-    class="topnav">
-    {% if user and session["user_email"] == user.email %}
-      <p><a href="/users/{{ user.user_id }}"> User Dashboard </a></p>
-      <p><a href="/log_out">Logout</a></p>
-    {% else %}
-    <a href="/log_in_page">Log In</a>
-    {% endif %}
-  </div>  
 
   <div id="activity-container">
     <h3>Upcoming TribeConnect events</h3>
@@ -53,7 +44,5 @@
     const activities={{ activities|tojson|safe }};
 </script>
 <script type="text/jsx" src="/static/jsx/filter.jsx"></script>
-
-
 
 {% endblock %}
