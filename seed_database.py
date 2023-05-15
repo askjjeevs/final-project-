@@ -92,6 +92,9 @@ for idx in range(10):
 # Create a new subscriber and associate it with the chosen user and activity
     subscriber = Subscriber(activity_id=activity.activity_id, user_id=user.user_id)
     subscribers_in_db.append(subscriber)
+
+# messages_in_db = []
+
     
 db.session.add_all(subscribers_in_db)
 db.session.commit()

@@ -1,6 +1,6 @@
 """Crud operations"""
 
-from model import db, User, Address, Activity, Subscriber, connect_to_db
+from model import db, User, Address, Activity, Subscriber, Message, connect_to_db
 
  # USERS 
 def create_user(username, email, password, fname, address_id, lname, user_image_path=None, user_description=None):
@@ -96,9 +96,19 @@ def get_all_subscribers(activity_id):
     
     return Subscriber.query.all(activity_id)
 
-# def get_subscriber_by_user_and_activity(user_id, activity_id):
-#     subscriber = Subscriber.query.filter_by(user_id=user_id, activity_id=activity_id).first()
-#     return subscriber
+# MESSAGES
+
+def create_message(activity_id, user_id, created_datetime, message_text):
+    """Create and return a message"""
+
+    message = Message(activity_id=activity_id, user_id=user_id, created_datetime=created_datetime, message_text=message_text)
+    return message
+
+
+def get_messages_by_activityId(activity_id):
+    """Create and return a message"""
+
+    return Message.query.filter(Activity.activity_id == activity_id).join(User).all()
 
 
 if __name__ == '__main__':

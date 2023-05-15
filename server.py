@@ -1,5 +1,6 @@
 from flask import (Flask, render_template, request, flash, session, redirect, jsonify, json)
 from model import db,  User, Address, Activity, Subscriber, connect_to_db
+from datetime import datetime
 import crud as crud
 import cloudinary.uploader
 import os
@@ -194,6 +195,32 @@ def create_activities():
 
     return redirect("/users/"+str(session["user_id"]))
 
+
+@app.route("/messages", methods=["POST"])
+def create_activity_message():
+    """Create activity message"""
+    json = request.get_json()
+    activity_id = json.get("activity_id")
+    user_id = int(session["user_id"])
+    created_datetime = datetime.now()
+    message_text = json.get("message_text")
+
+    message = crud.create_message(activity_id, user_id, created_datetime, message_text)
+    db.session.add(message)
+    db.session.commit()
+
+    return jsonify({'status': 200, 'success': True, "msg": "You have created a message"})
+
+
+@app.route("/messages/<activity_id>")
+def display_activity_message(activity_id):
+
+    messages = crud.get_messages_by_activityId(activity_id)
+
+    records = [message.to_json() for message in messages]
+
+    return jsonify({'status': 200, 'success': True, "messages": records})
+
 @app.route("/update_activity/<activity_id>")
 def display_update_activity(activity_id):
     """Display the update activity page"""
@@ -201,7 +228,6 @@ def display_update_activity(activity_id):
     activity = crud.get_activity_by_id(activity_id)
 
     return render_template("update_activity.html", activity=activity)
-
 
 @app.route("/update_activities", methods=["POST"])
 def update_activities():
@@ -242,6 +268,7 @@ def display_activity_details(activity_id):
     """View activity details page"""
 
     activity = crud.get_activity_by_id(activity_id)
+    print("sdfsdfdsfsdf", activity)
 
     is_logged_in_user_subscribed = False
     if "user_id" in session:

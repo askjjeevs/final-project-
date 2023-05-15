@@ -25,6 +25,8 @@ class User(db.Model):
     activities = db.relationship("Activity", secondary="subscribers", back_populates="users")
     # allows one to see the activites_created by a specific user
     activities_created = db.relationship("Activity", back_populates="creator")
+    # one user can post more than one message
+    messages = db.relationship("Message", back_populates="user")
 
 
     def __repr__(self):
@@ -51,6 +53,8 @@ class Activity(db.Model):
     users = db.relationship("User", secondary="subscribers", back_populates="activities")
     # allows one to see the activities that a user has created. 
     creator = db.relationship("User", back_populates="activities_created")
+    # many messages for many activities
+    messages = db.relationship("Message", back_populates="activities")
  
     def __repr__(self):
         return f"<Activity activity_id={self.activity_id}  activity_date={self.activity_date} activity_name={self.activity_name} subscribers={self.users}>"
@@ -100,6 +104,34 @@ class Address(db.Model):
     def __repr__(self):
         return f"<Address address_id={self.address_id} street_address={self.street_address}>"
 
+class Message(db.Model):
+    """One user can post many messages about many activities"""
+
+    __tablename__ = "messages"
+
+    message_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    activity_id = db.Column(db.Integer,  db.ForeignKey("activities.activity_id"), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=True)
+    created_datetime = db.Column(db.DateTime, nullable=True)
+    message_text = db.Column(db.Text)
+
+    # one user can post more than one message
+    user = db.relationship("User", back_populates="messages")
+    # more than one message can be posted about more than one activity
+    activities= db.relationship("Activity", back_populates="messages")
+
+    def __repr__(self):
+        return f"<Message message_id={self.message_id} message_text={self.message_text}>"
+    
+    def to_json(self):
+        return {
+            "message_text": self.message_text,
+            "user_name": self.user.fname + " " + self.user.lname,
+            "created_datetime": self.created_datetime,
+            "user_image":self.user.user_image_path
+        }
+    
+    
 def connect_to_db(flask_app, db_uri="postgresql:///activity_matcher", echo=False):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
