@@ -2,6 +2,18 @@
 
 /* site-wrapper and site-wrapper-inner are to vertically center content using
    table/table-cell vertical centering. */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ecf8f8;
+  margin: 0;
+}   
+footer {
+  margin-top: 200px;
+  background-color: #000000d6;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
 .activity-filter {
   display: inline-block;
 } 
@@ -11,14 +23,217 @@
   width: 100%; /* Setting full width */
   justify-content: space-between; 
 }
+.h2 {
+    font-weight: 300;
+    font-size: 61px;
+    letter-spacing: -.5px;
+}
+.h3 {
+  font-weight: 400;
+  font-size: 49px;
+  letter-spacing: 0px;
+}
+.h5 {
+  font-size: 24px;
+}
+.subtitle {
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: .15px;
+  margin: 0px;
+}
+.subtitle.content {
+  font-weight: 600;
+}
+.user-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.tc-container {
+  max-width: 150px;
+  min-width: 140px;
+  height: 200px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 20px;
+  align-items: center;
+}
+.flex-container-subsection {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* .tc-container > .user-thumb  */
 
-
-.card {
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
+/* -------- Activity details -------- */
+.main-title {
+  margin-bottom: 30px;
+  border-bottom: #b2967d75 2px solid;
+  padding: 10px 0px;
+}
+.creator-img {
+  display: inline-block;
+}
+.host-details {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.activity-name {
+  margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
-.card-body {
-  padding: 10px;
+.user-name {
+  margin-bottom: 20px;
+  text-transform: capitalize;
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.left {
+  flex-grow: 2;
+}
+.right > .content {
+  margin-top: 150px;
+}
+img#activity-images {
+  /* height: 300px; */
+  width: 700px;
+  margin-bottom: 20px;
+}
+.subscribers-section {
+  margin: 100px 0px;
+}
+.message-image > .username {
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 5px;
+}
+.message-text {
+  max-width: 800px;
+  min-width: 800px;
+  height: 100px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 20px;
+}
+.message {
+  margin-bottom: 20px ;
+}
+.message-date {
+  font-size: 10px;
+  font-weight: 500;
+}
+.post-message {
+  min-width: 600px;
+  max-width: 900px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/* -------- Activity details -------- */
+
+
+
+/* homepage  */
+
+.headline-image {
+  width: 520px;
+  height: 230px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+.left,
+.right {
+  flex: 1;
+}
+
+.right {
+  float: left;
+}
+
+ /*  --------- btn ----------- */
+ .btn {
+  position: relative;
+
+  display: block;
+  padding: 10px 40px;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #B2967D;
+  color: #ffffff;
+
+  transition: background-color .3s;
+ }
+
+ .btn:hover,
+ .btn:focus {
+  background-color: #826c59;
+  color: #ffffff;
+ }
+
+ .btn>* {
+   position: relative;
+ }
+
+ .btn span {
+   display: block;
+   padding: 12px 24px;
+ }
+
+ .btn:before {
+   content: "";
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+
+   display: block;
+   width: 0;
+   padding-top: 0;
+
+   border-radius: 100%;
+
+   background-color: #826c599f;
+
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+ }
+
+ .btn:active:before {
+   width: 120%;
+   padding-top: 120%;
+
+   transition: width .2s ease-out, padding-top .2s ease-out;
+ }
+ .btn.disabled, 
+ .btn:disabled {
+   background-color: grey;
+ }

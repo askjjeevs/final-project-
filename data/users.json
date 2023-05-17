@@ -6,7 +6,7 @@
     "fname": "JohnR",
     "lname": "Doe",
     "address_id": 3,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a high school english teacher with 5 years of experience. I enjoy "
     }  ,
     {
@@ -16,7 +16,7 @@
     "fname": "Karen",
     "lname": "Smith",
     "address_id": 2,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a graphic designer and love all things creative."
     },
     {
@@ -26,7 +26,7 @@
     "fname": "Michael",
     "lname": "Jones",
     "address_id": 1,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a student studying anthropology."
     },
     {
@@ -36,7 +36,7 @@
     "fname": "Alice",
     "lname": "Williams",
     "address_id": 5,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a professional glass blower and enjoy socializing."
     },
     {
@@ -46,7 +46,7 @@
     "fname": "Robert",
     "lname": "Wilson",
     "address_id": 4,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a sales manager and like to play sports in my free time."
     },
     {
@@ -56,7 +56,7 @@
     "fname": "Nadia",
     "lname": "Mendoza",
     "address_id": 6,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a software engineer and enjoy hiking in my free time."
     },
     {
@@ -66,7 +66,7 @@
     "fname": "Nita",
     "lname": "Dutta",
     "address_id": 7,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "My name is Nita, and I'm a seamstress from Mumbai. I specialize in creating traditional Indian clothing, but I also enjoy designing modern outfits with a cultural twist."
     },
     {
@@ -76,7 +76,7 @@
     "fname": "Min",
     "lname": "Lim",
     "address_id": 8,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a waitress in a cafe. I moved here from Seoul, South Korea 5 years ago."
     },
     {
@@ -86,7 +86,7 @@
     "fname": "Jamie",
     "lname": "Lee",
     "address_id": 9,
-    "user_image_path": "/static/images/user_profile_stock.jpg",
+    "user_image_path": "/static/images/user_profile_stock.png",
     "user_description": "I am a recent graduate with a degree in finance and am currently job hunting."
     }
     ]

@@ -11,50 +11,63 @@
 
 
 {% block body %}
-<div class="container-fluid">
-	<h2>Tribe Activity Details</h2>
-	<h2>{{ activity.activity_name }}</h2>
-	<p>Host of activity: {{ activity.creator.fname }}</p>
-	<p>Date of activity: {{ activity.activity_date }}</p>
-	<p>Time: {{ activity.activity_time }}</p>
-	<p>Type of activity: {{ activity.activity_type }}</p>
-	<p>Description: {{ activity.activity_description }}</p>
-	<p>Address:</p>
-	<p class="address">
-		{{ activity.address.street_address }}<br>
-		{{ activity.address.city }}, {{ activity.address.state }}<br>
-		{{ activity.address.zip_code }}
-	</p>
-
-	<p>
-    	<img id="activity-images"
-        src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">
-    </p>
-	
-	<div className="container-fluid">
-		<div className="row justify-content-center">
-			<h2>Subscribers</h2>
-			{% if activity.users %}
-			<ul>
-				{% for user in activity.users %}
-				<li>
-					<a href="/user_profile/{{ user.user_id }}">{{ user.username }}</a>
-				</li>
-
-				{% endfor %}
-			</ul>
-			{% else %}
-				<p>No subscribers yet.</p>
-			{% endif %}
+<div>
+	<div class="main-title">
+		<h2 class="h2 activity-name">{{ activity.activity_name }}</h2>
+		<img class="user-thumb creator-img" src="{{ activity.creator.user_image_path }}" alt="Image relating to activity">
+		<div class="host-details">
+			<p class="subtitle label">Host of activity</p>
+			<p class="subtitle content">{{ activity.creator.fname }}</p>
 		</div>
-		<div id="subscribe-section" data-logged-in-user="{{ is_logged_in_user_subscribed }}"
-				data-activity-id="{{ activity.activity_id }}"></div>
-
 	</div>
-	<div>
-		<h2>Messages</h2>
-		<div id="activity-messages"
-			data-activity-id="{{ activity.activity_id }}"></div>
+	<div class="flex-container">
+		<div class="left">
+			<div>
+				<img id="activity-images" src="{{ activity.activity_image_path }}" alt="Image relating to activity">
+				<h5 class="h5"> Description </h5> 
+				<p> {{ activity.activity_description }}</p>
+			</div>
+			<div id="subscribe-section" data-logged-in-user="{{ is_logged_in_user_subscribed }}"
+				data-activity-id="{{ activity.activity_id }}">
+			</div>
+			<div class="subscribers-section">
+				<div class="">
+					<h5 class="h5">Subscribers</h5>
+					{% if activity.users %}
+					<div class="flex-container">
+						{% for user in activity.users %}
+						<a href="/user_profile/{{ user.user_id }}">
+							<div class="tc-container flex-container-subsection">
+								<div>
+									<img class="user-thumb" src="{{ activity.creator.user_image_path }}" alt="Image relating to activity">
+								</div>
+								<a href="/user_profile/{{ user.user_id }}">{{ user.username }}</a>
+							</div>
+						</a>
+						{% endfor %}
+					</div>
+					{% else %}
+						<p>No subscribers yet.</p>
+					{% endif %}
+				</div>
+			</div>
+			<div class="">
+				<h5 class="h5">Messages</h5>
+				<div id="activity-messages" data-activity-id="{{ activity.activity_id }}"></div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="content">
+				<p>Type of activity: {{ activity.activity_type }}</p>
+				<p>Date of activity: {{ activity.activity_date }}</p>
+				<p>Time: {{ activity.activity_time }}</p>
+				<p class="address">
+					{{ activity.address.street_address }}
+					{{ activity.address.city }}, {{ activity.address.state }}
+					{{ activity.address.zip_code }}
+				</p>
+			</div>
+		</div>
 	</div>
 </div>
 

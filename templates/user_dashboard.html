@@ -3,7 +3,7 @@
 {% block title %}User Dashboard{% endblock %}
 {% block body %}
 
-<div>
+<div class="container-fluid">
   <h1>{{user.fname}}! Welcome to your User Dashboard</h1>
     <div class="card">
       <p>Your username: {{ user.username }}</p>
@@ -39,6 +39,7 @@
     <ul>
       {% for created_activity in created_activities %}
         <li class="card-body">{{ created_activity.activity_name }} - {{ created_activity.activity_type }} - {{ created_activity.activity_date}}</li>
+        <a href="/activities/{{ created_activity.activity_id }}">{{ created_activity.activity_name }}</a>
         <p>
           <img id="activity-images"
             src="{{ created_activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">

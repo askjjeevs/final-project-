@@ -5,41 +5,53 @@
 
 <div id="root">
   <div class="spacer"></div> <!-- Add a div element for spacing -->
-
-    <h1>Welcome to Tribe Connect</h1>
-      <p>
-        Here's where you can build a community of curious minds and open hearts,discover the beauty of shared experiences and meaninful relationships, one connection at a time.
-      </p>
-
-
-  <div id="activity-container">
-    <h3>Upcoming TribeConnect events</h3>
     
-      <div id="activity-filter">
-        <label for="activity-filter">Filter activities by type:</label>
-        <select id="activity-filter" name="activity_type-filter" required>
-          <option value="Fitness/Exercise">Fitness/Exercise</option>
-          <option value="Culinary">Culinary</option>
-          <option value="Arts">Art</option>
-          <option value="Entertainment">Entertainment</option>
-          <option value="Games/Gaming">Games/Gaming</option>
-          <option value="Outdoor">Outdoor</option>
-          <option value="Indoor">Indoor</option>
-          <option value="Dancing">Dancing</option>
-          <option value="Meditation">Meditation</option>
-          <option value="Gardening">Gardening</option>
-          <option value="DIY/Crafting">DIY/Crafting</option>
-          <option value="Photography">Photography</option>
-          <option value="Shopping">Shopping</option>
-          <option value="Volunteering">Volunteering</option>
-          <option value="Other">Other</option>
-        </select>
+      <div class="flex-container"> 
+        <div class="left">
+          <h1 class="h2 welcome-name">Welcome to Tribe Connect</h1>
+          <p>
+            Here's where you can build a community of curious minds and open hearts,discover the beauty of shared experiences and meaninful relationships, one connection at a time.
+          </p>
+        </div>
+        <div class="right">
+          <div class=""> 
+            <img src="/static/images/Party.png" width="550" height="250" decoding="async" data-nimg="1" style="color: transparent;">
+          </div>
+        </div>
       </div>
-
-
-  </div>
+    <div class="flex-container">
+      <div class="left">
+        <div id="activity-container">
+        <h3>Upcoming TribeConnect events</h3>
+          <div id="activity-filter">
+            <label for="activity-filter">Filter activities by type:</label>
+            <select id="activity-filter" name="activity_type-filter" required>
+              <option value="Fitness/Exercise">Fitness/Exercise</option>
+              <option value="Culinary">Culinary</option>
+              <option value="Arts">Art</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Games/Gaming">Games/Gaming</option>
+              <option value="Outdoor">Outdoor</option>
+              <option value="Indoor">Indoor</option>
+              <option value="Dancing">Dancing</option>
+              <option value="Meditation">Meditation</option>
+              <option value="Gardening">Gardening</option>
+              <option value="DIY/Crafting">DIY/Crafting</option>
+              <option value="Photography">Photography</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Volunteering">Volunteering</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div id="activities-to-filter" data-activities-to-filter="{{ activities }}"></div>
+      </div>
+    
+      <div class="right">
+        
+      </div>
+    </div>
 </div>
-<div id="activities-to-filter" data-activities-to-filter="{{ activities }}"></div>
 <script type=text/javascript>
     const activities={{ activities|tojson|safe }};
 </script>
