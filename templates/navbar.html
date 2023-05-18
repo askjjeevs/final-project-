@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="na">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 my-navbar" id="na">
           {% if "user_id" in session %}
             <li class="nav-item">
               <a class="nav-link" href="/users/{{ session["user_id"] }}"> User Dashboard</a>
@@ -17,15 +17,8 @@
             <li class="nav-item">
               <a class="nav-link" href="/log_in_page">Log In</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sign_up_page">Sign Up</a>
-            </li>
           {% endif %}
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>

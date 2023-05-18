@@ -3,50 +3,54 @@
 
 {% block body %}
 
-<h2>
-    Tribe User Account Details
-</h2>
-<h2>
-    Customize your Tribe profile 
-</h2>
-
-    <p>Username: {{ user.username }}</p>
-    <p>
+<div class="account-details"> 
     <img id="user-profile-images" src="{{ user.user_image_path }}" alt="Stock Image of a User"
         style="width: 200px; height: 200px;">
+    <h6 class="h6">
+        User Details
+    </h6>
+    <p>Username: </p> <p> {{ user.username }}</p>
+    <p>
+        Email Address:  
+    </p> 
+    <p> 
+        {{ user.email }}
     </p>
-<p>
-    Email Address: {{ user.email }}
-</p>
-<p>
-    First Name: {{ user.fname }}
-</p>
-<p>
-    Last Name: {{ user.lname }}
-</p>
+    <p>
+        First Name:  
+    </p> 
+    <p>
+         {{ user.fname }}
+    </p>
+    <p>
+        Last Name: 
+    </p> 
+    <p> 
+        {{ user.lname }}
+    </p>
 
-{% if user.address != None %}
-<p>
-    Street address: {{ user.address.street_address }}
-</p>
-<p>
-    City: {{ user.address.city }}
-</p>
-<p>
-    State: {{ user.address.state }}
-</p>
-<p>
-    Zip Code: {{ user.address.zip_code }}
-</p>
+    {% if user.address != None %}
+    <p>
+        Street address:  </p> <p> {{ user.address.street_address }}
+    </p>
+    <p>
+        City:  </p> <p> {{ user.address.city }}
+    </p>
+    <p>
+        State:  </p> <p> {{ user.address.state }}
+    </p>
+    <p>
+        Zip Code:  </p> <p> {{ user.address.zip_code }}
+    </p>
 
-{% endif %}
-<p>
-    Describe Yourself : {{ user.user_description }}
-</p>
+    {% endif %}
+    <p>
+        Describe Yourself : </p> <p> {{ user.user_description }}
+    </p>
 
-<a href="/update_account" class="button">Personal Profile: View and edit your personal information </a><br>
+    <a href="/update_account" class="button">Personal Profile: View and edit your personal information </a><br>
 
-
+</div>
 
 
 {% endblock %}

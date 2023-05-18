@@ -37,13 +37,12 @@ function FilterByActivity(props) {
      ]
 
     return (
-        <div className="container-fluid">
-            <h6>Filter By Activity Type:</h6>
-            <div className="row justify-content-center">
+        <div className="filter flex-container">
+            <div className="left">
                 {activityTypes.map((type, id) => {
                     return (
                         <div 
-                        key={id} className="activity-container">
+                        key={id} className="activity-btn">
                             
                             <button className="activity-filter" 
                                 onClick={() => filterItem(type)}>
@@ -52,22 +51,28 @@ function FilterByActivity(props) {
                         </div>
                     );
                 })}
+            </div>
+            <div className="right-flex-container">
                 {filteredActivities.map((activity, id) => {
                     return (
-                        <div 
-                            className="col-md-4 col-sm-6 card my-3 py-3 border-2"
-                            key={id}>
-                            <a href={"/activities/" + activity.activity_id}>{activity.activity_name}</a>
-                            <p className="card-text">{activity.activity_type}</p>
-                            <img src={activity.activity_image_path} className="card-img-top" alt={activity.activity_name} style={{ width: "200px", height: "200px" }} />
-                            <p className="card-text">{activity.activity_date}</p>
+                        <div className="card act-card">                        
+                            <div 
+                                className=""
+                                key={id}>
+                                <img id="homepage-card-img" src={activity.activity_image_path} className="card-img-top" alt={activity.activity_name} />
+                                <div class="card-body act-card-homepage-body">
+                                <h5 class="h5 card-title"> 
+                                    <a href={"/activities/" + activity.activity_id}>{activity.activity_name}</a>
+                                </h5>
+                                {/* <p className="card-text">{activity.activity_type}</p>
+                                <p className="card-text">{activity.activity_date}</p> */}
+                                </div>
+                            </div>
                         </div>
                     );
                 })}
-            
             </div>
         </div>
     );
-
 }
 ReactDOM.render(<FilterByActivity />, document.querySelector('#activity-container'));

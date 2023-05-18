@@ -6,26 +6,24 @@
 <div id="root">
   <div class="spacer"></div> <!-- Add a div element for spacing -->
     
-      <div class="flex-container"> 
-        <div class="left">
-          <h1 class="h2 welcome-name">Welcome to Tribe Connect</h1>
-          <p>
-            Here's where you can build a community of curious minds and open hearts,discover the beauty of shared experiences and meaninful relationships, one connection at a time.
-          </p>
-        </div>
-        <div class="right">
-          <div class=""> 
-            <img src="/static/images/Party.png" width="550" height="250" decoding="async" data-nimg="1" style="color: transparent;">
-          </div>
+    <div class="main-section-header flex-container"> 
+      <div class="left">
+        <h5 class="h5 welcome-name">TRIBE CONNECT</h5>
+        <p class="homepage welcome">
+          Here's where you can build a community of curious minds and open hearts, discover the beauty of shared experiences and meaninful relationships, one connection at a time.
+        </p>
+      </div>
+      <div class="right">
+        <div class=""> 
+          <img id="front-page-img" src="/static/images/Party.png">
         </div>
       </div>
-    <div class="flex-container">
-      <div class="left">
-        <div id="activity-container">
-        <h3>Upcoming TribeConnect events</h3>
+    </div>
+    <div class="bottom-section">
+        <h3 class="h3">Upcoming Events</h3>
+        <div id="activity-container"></div>
           <div id="activity-filter">
-            <label for="activity-filter">Filter activities by type:</label>
-            <select id="activity-filter" name="activity_type-filter" required>
+            <select style="display: none;" id="activity-filter" name="activity_type-filter" required>
               <option value="Fitness/Exercise">Fitness/Exercise</option>
               <option value="Culinary">Culinary</option>
               <option value="Arts">Art</option>
@@ -44,14 +42,10 @@
             </select>
           </div>
         </div>
-        <div id="activities-to-filter" data-activities-to-filter="{{ activities }}"></div>
-      </div>
-    
-      <div class="right">
-        
-      </div>
+  
     </div>
 </div>
+<div id="activities-to-filter" data-activities-to-filter="{{ activities }}"></div>
 <script type=text/javascript>
     const activities={{ activities|tojson|safe }};
 </script>
