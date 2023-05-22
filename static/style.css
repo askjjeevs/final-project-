@@ -9,7 +9,7 @@ body {
 }   
 footer {
   margin-top: 200px;
-  background-color: #000000d6;
+  background-color: #ecc9c9d6;
   color: white;
   text-align: center;
   padding: 50px;
@@ -97,6 +97,9 @@ footer {
   margin-bottom: 20px;
   text-transform: capitalize;
 }
+.creator-img-link {
+  text-decoration: none;
+}
 
 .user-name {
   margin-bottom: 20px;
@@ -114,9 +117,23 @@ footer {
   margin-top: 150px;
 }
 img#activity-images {
-  /* height: 300px; */
   width: 700px;
-  margin-bottom: 20px;
+  max-height: 600px;
+  margin-bottom: 40px;
+  object-fit: cover;
+}
+img#user-activity-images {
+  width: 200px;
+  height: 200px;
+}
+.dashboard-welcome-title {
+  margin: 40px 0px;
+}
+.flex-container-subscribed {
+  margin-top: 50px;
+}
+.top-dash.flex-container {
+  flex-wrap: wrap;
 }
 .subscribers-section {
   margin: 100px 0px;
@@ -151,10 +168,122 @@ img#activity-images {
   margin-top: 60px;
   margin-bottom: 20px;
 }
+.right>.card{
+  background-color: #eeeeee ;
+  margin: auto;
+  padding: 25px;
+  
+}
 
-/* -------- Activity details -------- */
+.right>.content,
+.address {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.right>.content p,
+.address {
+  margin-bottom: 10px;
+}
+
+.content-subtitle{
+  font-weight: 500;
+}
+
+/* account details, user profile  */
+
+.account-details {
+  margin: 40px 0px;
+} 
+
+.account-image {
+  margin-top: 20px ;
+}
+
+.user-profile-other-image >  #user-profile-images,
+.account-image > #user-profile-images {
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+.user-profile-other-main { 
+  margin: 40px 20px;
+}
+
+.user-profile-other-main > p > svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.user-profile-other-bottom > h6 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #b45d39;
+  margin: 20px 0px;
+  text-transform: uppercase;
+}
+
+.user-profile-other-bottom {
+  margin: 60px 0px;
+}
+
+.account-details-main-details {
+  margin: 0px 40px;
+  margin-bottom: 40px;
+}
+
+.account-details-item > .label {
+  font-weight: 600;
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  min-width: 160px;
+}
+
+.account-details-item > .value {
+  display: inline-block;
+  font-size: 14px;
+}
+
+.account-details-main-details > .h6 {
+    color: #7c4129;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
 
+/* update account  */
+
+.account-update-item {
+  margin: 15px 0px;
+}
+.account-update-item > label {
+  font-size: 12px;
+  min-width: 150px;
+  text-transform: uppercase;
+}
+.account-update-item > h6 {
+  text-transform: uppercase;
+  margin: 20px 0px;
+  margin-top: 40px;
+}
+.new-activity > .text-center {
+  margin: 40px 0px;
+}
+.user_description { 
+  vertical-align: top;
+}
+.account-update-item-extra-margin {
+  margin: 50px 0px;
+}
 
 /* homepage  */
 
@@ -208,6 +337,11 @@ img#activity-images {
   background-color: #eee4e170;
   text-align: center;
 }
+.user-profile-act-card {
+  max-width: 200px;
+  min-height: 130px;
+  margin-right: 30px;
+}
 .h5.card-title > a {
   color: black;
   color: #0000009e;
@@ -251,6 +385,9 @@ img#activity-images {
   background-color: #eee4e170;
   /* border-color: #b2967d; */
   border: 1px solid #b2967d;
+}
+.h3.homepage-subheading {
+  color: #7c4129;
 }
 
  /*  --------- btn ----------- */
@@ -320,8 +457,82 @@ img#activity-images {
  .btn:disabled {
    background-color: grey;
  }
+/* ---------------------------Dashboard */
+ .flex-container-dashboard {
+  display: flex;
+  flex-wrap: nowrap;
+ }
 
- /* -------------------------Login button */
+ .flex-container-dashboard > .left {
+    flex-grow: 1;
+    width: 500px;
+    height: auto;
+    background-color: E6BEAE;
+    width: 200px;
+    
+  }
+
+  .flex-container-dashboard >.right {
+    flex-grow: 2;
+    width: 500px;
+    height: auto;
+    background-color: E6BEAE;
+    align-self: center;
+  }
+
+  .subtitle.content {
+    display: inline-block;
+  }
+ .buttons-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+   /* Align the buttons in the center */
+ }
+
+ .btn-dash {
+  display: inline-block;
+  padding: 10px 20px;
+   /* Add some padding */
+   background-color: #B2967D;
+   /* Set the background color */
+   color: white;
+   /* Set the text color */
+   text-decoration: none;
+   /* Remove underline from links */
+   border: none;
+   /* Remove button borders */
+   border-radius: 4px;
+   /* Add rounded corners */
+   font-size: 16px;
+   /* Set the font size */
+   cursor: pointer;
+   /* Add cursor pointer on hover */
+   margin: 5px;
+   /* Add some margin between buttons */
+ }
+
+ .btn-dash:hover {
+   background-color: #826c59;
+   /* Change the background color on hover */
+ }
+
+ .btn-dash a {
+   color: white;
+   /* Set the text color for links */
+   text-decoration: none;
+   /* Remove underline from links */
+ }
+ 
+.h3.dash-subheading {
+  font-size: 20px;
+  font-weight: 400;
+  color: #b45d39;
+  margin-top: 50px;
+}
+
+
+ /* * -------------------------Login button */ 
 
   .wrapper {
     max-width: 350px;
@@ -331,8 +542,6 @@ img#activity-images {
     background-color: #ecf0f3;
     border-radius: 15px;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
   .wrapper.sign-up {
@@ -352,12 +561,8 @@ img#activity-images {
     width: 80px;
     margin: auto;
   }
-  .logo.sign-up{
-    width: 80px;
-    margin: auto;
-  }
 
-  .logo.sign-up img {
+  .logo img {
     width: 100%;
     height: 85px;
     object-fit: cover;
@@ -409,27 +614,17 @@ img#activity-images {
     box-shadow: 3px 3px 3px #b1b1b1,
       -3px -3px 3px #fff;
     letter-spacing: 1.3px;
-  }
-
-  .wrapper .btn:hover {
-    background-color: #E4AD98;
+    font-weight: 900;
   }
 
   .wrapper a {
     text-decoration: none;
-    font-size: 0.8rem;
-    color: #E6BEAE;
+    color: #ffffff;
+    font-weight: 900;
   }
 
   .wrapper a:hover {
     color: #E6BEAE;
-  }
-
-  @media(max-width: 380px) {
-    .wrapper {
-      margin: 30px 20px;
-      padding: 40px 15px 15px 15px;
-    }
   }
 
   /* navbar  */
@@ -437,7 +632,9 @@ img#activity-images {
   .my-navbar {
     float: left;
   }
-
+  .navbar{
+    color:#E6BEAE
+  }
   /* ------------------create-activity */
   .form-titles{
     font-size: 14px;

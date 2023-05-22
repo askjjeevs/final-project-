@@ -2,61 +2,84 @@
 
 {% block title %}User Dashboard{% endblock %}
 {% block body %}
-
-<div class="container-fluid">
-  <h1>{{user.fname}}! Welcome to your User Dashboard</h1>
-    <div class="card">
-      <p>Your username: {{ user.username }}</p>
-      <p>Your email: {{ user.email }}</p>
-      <p>
-        <img id="user-profile-images" src="{{ user.user_image_path }}" alt="Default Image of a User" style="width: 200px; height: 200px;">
-      </p>
-    </div>
-      <button type="button" class="btn btn-outline-primary"><a href="/account_details/{{ user.user_id }}" </a>View/Edit Account</button>
-      <button type="button" class="btn btn-outline-primary"><a href="/user_profile/{{ user.user_id }}" </a>View TribeUser profile</button>
-
-        <p><a href="/user_profile/{{ user.user_id }}" class="button">View your TribeUser profile </a></p>
-      <p><a href="/create_new_activity" class="button">Create a new activity</a></p>
-    </div>
+<div>
+  <h4 class="h4 dashboard-welcome-title">Welcome to your Dashboard, {{user.fname}}</h4>
   <div class="card">
-    <h2>Activities you subscribed to:</h2>
+    <div class="flex-container-dashboard">
+      <div class="left">
+        <img id="user-profile-images" src="{{ user.user_image_path }}" alt="Default Image of a User"
+          style="width: 200px; height: 200px;">
+      </div>
+      <div class="right">
+        <p class="subtitle label">Your username:</p>
+        <p class="subtitle content">{{ user.username }}</p>
+        <p class="subtitle label">Your email:</p>
+        <p class="subtitle content"> {{ user.email }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <div>
+      <a href="/account_details/{{ user.user_id }}" class="btn-dash">View/Edit Account</a>
+      <a href="/create_new_activity" class="btn-dash">Create a new activity</a>
+    </div>
+  </div>
+  
+  <div class="flex-container-subscribed">
+    <h3 class="h3 dash-subheading">Activities attending</h3>
+    <div class="top-dash flex-container">
     {% if activities %}
-      <ul>
-        {% for activity in activities %}
-          <li class="card-body">{{ activity.activity_name }} - {{ activity.activity_type }} - {{ activity.activity_date}}</li>
-          <img id="activity-images" src="{{ activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">   
+      {% for activity in activities %}
+      <div class="card act-card">
+        <img id="user-activity-images" src="{{ activity.activity_image_path }}" alt="Image relating to activity">
+        <div class="card-body act-card-homepage-body">
+          <h5 class="h5 card-title">
+            <a href="/activities/{{ activity.activity_id }}">{{ activity.activity_name }}</a>
+          </h5>
+          <p class="card-text">{{ activity.activity_type }}</p>
+          <p class="card-text dashboard-act-date">{{ activity.activity_date}}</p>
+          <script type="text/JavaScript">
+              alert({{ activity.activity_date}});
+              var a = moment().toString();
+              document.getElementById("todaysdate").innerHTML = a;
+          </script>
+        </div>
+            
+      </div>
         {% endfor %}
       </ul>
     {% else %}
       <p>You have not subscribed to any activities yet.</p>
     {% endif %}
   </div>
-  <div class="card">
-  <h2>
-    Activities you are hosting:
-  </h2>
-  {% if created_activities %}
-    <ul>
-      {% for created_activity in created_activities %}
-        <li class="card-body">{{ created_activity.activity_name }} - {{ created_activity.activity_type }} - {{ created_activity.activity_date}}</li>
-        <a href="/activities/{{ created_activity.activity_id }}">{{ created_activity.activity_name }}</a>
+  <div>
+    <h3 class="h3 dash-subheading">Activities you are hosting</h3>
+    <div class="bottom-dash flex-container">
+      {% if created_activities %}
+          {% for created_activity in created_activities %}
+          <div class="card act-card">
+              <img id="user-activity-images" id="homepage-card-img" src="{{ created_activity.activity_image_path }}" class="card-img-top" alt="Image relating to activity" style="width: 200px; height: 200px;"/>
+              <div class="card-body act-card-homepage-body">
+                <h5 class="h5 card-title">
+                  <a href="/activities/{{ created_activity.activity_id }}">{{ created_activity.activity_name }}</a>
+                </h5>
+                <p class="card-text">{{ created_activity.activity_type }}</p>
+                <p class="card-text">{{ created_activity.activity_date}}</p>
+                <a href="/update_activity/{{ created_activity.activity_id }}" class="btn-dash" >Update activity</a>
+              </div>
+          </div>
+          {% endfor %}
+      {% else %}
         <p>
-          <img id="activity-images"
-            src="{{ created_activity.activity_image_path }}" alt="Image relating to activity" style="width: 200px; height: 200px;">
-        </p>     
-        <!-- <button data-activity-id="{{ created_activity.activity_id }}" id="edit-activity-details"> Edit Activity </button> -->
-        <a href="/update_activity/{{ created_activity.activity_id }}" class="button">Update activity</a>
-        {% endfor %}
-    </ul>
-  {% else %}
-    <p>
-      You have not creaed any activities yet.
-    </p>
-  {% endif %}
+          You have not creaed any activities yet.
+        </p>
+      {% endif %}
+    </div>
   </div>
- 
-{% endblock %}
 </div>
+</div>
+{% endblock %}
+
 
 
 

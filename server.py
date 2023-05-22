@@ -42,16 +42,14 @@ def sign_up_new_user():
     password = request.form.get("password")
     fname = request.form.get("fname")
     lname = request.form.get("lname")
-    street_address = (" ")
-    city = (" ")
-    state = (" ")
-    zip_code = (" ")
+    
 
-    user = crud.get_user_by_email(email, argon2.hash(password))
+    user = crud.get_user_by_email(email)  
+    # argon2.hash(password)
     if user:
         flash("An account with that email already exists. Try another email.")
     else:
-        user = crud.create_user(username, email, password, fname,lname, street_address, city, state, zip_code)
+        user = crud.create_user(username, email, password, fname,lname)
         db.session.add(user)
         db.session.commit()
         flash("Account created! Please log in.")
@@ -268,8 +266,6 @@ def display_activity_details(activity_id):
     """View activity details page"""
 
     activity = crud.get_activity_by_id(activity_id)
-    print("sdfsdfdsfsdf", activity)
-
     is_logged_in_user_subscribed = False
     if "user_id" in session:
         for user in activity.users:
@@ -302,6 +298,26 @@ def subscribe_activity(activity_id):
     
     return jsonify({'success': True, "msg": "You have subscribed to this activity!"})
 
+
+@app.route("/unsubscribe/<activity_id>")
+def unsubscribe(activity_id):
+    """Unsubscribe a user from the activity"""
+
+    if "user_id" not in session:
+        return jsonify({'success': False, 'msg': "Please log in to unsubscribe from activities"})
+
+    activity = crud.get_activity_by_id(activity_id)
+    if not activity:
+        return jsonify({'success': False, 'msg':"This activity does not exist"})
+    
+    subscriber = crud.get_subscriber_by_user_and_activity(user_id=session["user_id"], activity_id=activity_id)
+    if subscriber is None:
+        return jsonify({'success': True, 'msg': "You have unsubscribed from this activity"})
+    
+    db.session.delete(subscriber)
+    db.session.commit()
+    
+    return jsonify({'success': True, "msg": "You have unsubscribed from this this activity"})
 
 
 if __name__ == "__main__":

@@ -60,8 +60,8 @@ function FilterByActivity(props) {
                                 className=""
                                 key={id}>
                                 <img id="homepage-card-img" src={activity.activity_image_path} className="card-img-top" alt={activity.activity_name} />
-                                <div class="card-body act-card-homepage-body">
-                                <h5 class="h5 card-title"> 
+                                <div className="card-body act-card-homepage-body">
+                                <h5 className="h5 card-title"> 
                                     <a href={"/activities/" + activity.activity_id}>{activity.activity_name}</a>
                                 </h5>
                                 {/* <p className="card-text">{activity.activity_type}</p>

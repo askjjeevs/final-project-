@@ -5,7 +5,8 @@ function SubscribeActivity(props) {
     const logged_in_user_bool = (logged_in_user === 'true')
     const [isSubscribed, setIsSubscribed] = React.useState(logged_in_user_bool);
     
-    const handleSubscribe = () => {
+    const handleSubscribe = (evt) => {
+        evt.preventDefault();
         fetch(`/subscribe/${activityId}`)
             .then((response) => response.json())
             .then((responseInfo) => {
@@ -17,10 +18,23 @@ function SubscribeActivity(props) {
                 }
             });
     };
+    const handleUnsubscribe = (evt) =>{
+        evt.preventDefault();
+        fetch(`/unsubscribe/${activityId}`)
+        .then((response) => response.json())
+        .then((responseInfo) => {
+            console.log(responseInfo);
+            if (responseInfo['success'] === true) {
+                setIsSubscribed(false);
+            } else {
+                alert(responseInfo['msg']);
+            }
+        });
+    }
     return (
         <div>
-            <button className="btn" onClick={handleSubscribe} disabled={isSubscribed}>
-                {isSubscribed ? 'Subscribed' : 'Subscribe'}
+            <button className="btn" onClick={isSubscribed ? handleUnsubscribe : handleSubscribe}>
+                {isSubscribed ? 'Unsubscribe' : 'Subscribe'}
             </button>
         </div>
     );

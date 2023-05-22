@@ -96,6 +96,10 @@ def get_all_subscribers(activity_id):
     
     return Subscriber.query.all(activity_id)
 
+def get_subscriber_by_user_and_activity(user_id, activity_id):
+
+    return Subscriber.query.filter_by(user_id=user_id,activity_id=activity_id).first()
+
 # MESSAGES
 
 def create_message(activity_id, user_id, created_datetime, message_text):

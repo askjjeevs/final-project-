@@ -4,10 +4,7 @@
 {% block body %}
 <div class="new-activity container">
   <div class=" text-center mt-5 ">
-
-    <h1 class="h3">Create a new TribeConnect activity</h1>
-
-
+    <h3 class="h3">Create a new TribeConnect activity</h3>
   </div> 
 
   <div class="new-activity row ">
@@ -148,12 +145,14 @@
                 </select>
               </div>
             </div>
-              </p>
-              <p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
                 <new-act-label class="form-titles" for="zip_code">Zip Code: </new-act-label> 
                 <input type="text" id="zip_code" name="zip_code" class="form-control" required="required"
                 data-error="Zip Code is required.">
-              </p>
+              </div>
+            </div>
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -165,16 +164,15 @@
                 </div>
                 <div class="col-md-12">
                   <new-act-label class="form-titles" for="my-file-cloudinary">Upload your own image</new-act-label class="form-control">
-                  <input type="file" name="my-file">
+                  
+                  <p><input class="btn-dash" type="file" name="my-file"></p>
                 </div>
                 <div>
-                  <input type="submit" class="form-control" class="submit-btn btn-success btn-send  pt-2 btn-block" value="Add a new TribeConnect activity">
+                  <input class="btn-dash" type="submit" class="form-control" class="submit-btn btn-success btn-send  pt-2 btn-block" value="Add a new TribeConnect activity">
                 </div>
             </div>
           </div>
             </form>
-            
-
 </div>
   
 {% endblock %}
