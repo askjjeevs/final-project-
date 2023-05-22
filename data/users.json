@@ -1,93 +1,93 @@
 [
     {
-    "username": "jrdoe",
-    "email": "jrdoe@example.com",
-    "password": "password123",
-    "fname": "JohnR",
-    "lname": "Doe",
+    "username": "aturing",
+    "email": "aturing@example.com",
+    "password": "password",
+    "fname": "Alan",
+    "lname": "Turing",
     "address_id": 3,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a high school english teacher with 5 years of experience. I enjoy "
+    "user_image_path": "/static/images/user1.png",
+    "user_description": "I am a high school english teacher with 5 years of experience. I enjoy puzzles and problem solving. I take pleasure in exploring the local scene. You might find me attending community events, supporting local artists, or enjoying leisurely walks in the picturesque parks that dot this idyllic landscape. Oh, and let's not forget the warm and inviting coffee shops that serve as my sanctuary for contemplating life's mysteries. I look forward to meeting you all"
     }  ,
     {
-    "username": "ksmith",
+    "username": "kimbriant",
     "email": "ksmith@example.com",
-    "password": "password123",
-    "fname": "Karen",
-    "lname": "Smith",
+    "password": "password",
+    "fname": "Kimberly",
+    "lname": "Briant Smith",
     "address_id": 2,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a graphic designer and love all things creative."
+    "user_image_path": "/static/images/user2.png",
+    "user_description": "I love math and computers. I currently works as a graphic designer and love all things creative. When I'm not immersed in the digital realm, I find pure bliss in yoga, long walks, exploring the city's vibrant art scene. You can often spot me wandering through galleries, attending live performances, and getting lost in the pages of a captivating book. I believe that friendship flourishes when shared passions intertwine, so let's connect and embark on exciting creative adventures together!"
     },
     {
-    "username": "mjones",
-    "email": "mjones@example.com",
-    "password": "password123",
-    "fname": "Michael",
-    "lname": "Jones",
+    "username": "sanadella",
+    "email": "snadella@example.com",
+    "password": "password",
+    "fname": "Sanjay",
+    "lname": "Nadella",
     "address_id": 1,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a student studying anthropology."
+    "user_image_path": "/static/images/user3.png",
+    "user_description": "Hi I'm Sanjay and I'm back to being a student after a few years in the corporate world. As an anthropology student, I embark on a captivating journey to understand the intricacies of human cultures and societies. Guided by curiosity and empathy, I explore the diverse tapestry of rituals, beliefs, and social structures that shape our world. Along this path, I not only seek knowledge but also embrace the opportunity to forge new friendships with individuals who share a passion for understanding humanity's rich tapestry. Together, let's unravel the fascinating threads of our collective past and create lasting connections that transcend borders and boundaries."
     },
     {
-    "username": "awilliams",
-    "email": "awilliams@example.com",
-    "password": "password123",
-    "fname": "Alice",
-    "lname": "Williams",
+    "username": "ymatsuka",
+    "email": "ymatsuka@example.com",
+    "password": "password",
+    "fname": "Yoki",
+    "lname": "Matsuka",
     "address_id": 5,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a professional glass blower and enjoy socializing."
+    "user_image_path": "/static/images/user4.png",
+    "user_description": "I am Yoki, a devoted student and aspiring professional in the art of glass blowing who also loves to garden. With each breath, I shape molten glass into exquisite pieces of art, driven by my love for creativity and craftsmanship. I am dedicated to honing my skills and pushing the boundaries of this ancient art form. Beyond my journey of mastery, I find joy in connecting with fellow artists and enthusiasts, sharing stories, techniques, and the sheer delight of working with this mesmerizing medium. Let's embark on an exciting exploration of glass artistry together and build lasting connections within our passionate community."
     },
     {
     "username": "rwilson",
     "email": "rwilson@example.com",
-    "password": "password123",
+    "password": "password",
     "fname": "Robert",
     "lname": "Wilson",
     "address_id": 4,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a sales manager and like to play sports in my free time."
+    "user_image_path": "/static/images/user5.png",
+    "user_description": "I am a sales manager and like to play sports in my free time. As a driven sales manager, I thrive in the dynamic world of business, utilizing my skills to build strong client relationships and drive growth. When I'm not focused on driving sales targets, I find solace and rejuvenation in playing sports during my free time. Whether it's a friendly game of soccer, a challenging tennis match, or an adrenaline-pumping basketball session, I relish the physical activity and the opportunity to stay active and competitive. Let's connect and share our love for both the business arena and the exhilarating world of sports, as we strive for success and engage in friendly competition along the way."
     },
     {
     "username": "nmendoza",
     "email": "nmendoza@example.com",
-    "password": "password123",
+    "password": "password",
     "fname": "Nadia",
     "lname": "Mendoza",
     "address_id": 6,
     "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a software engineer and enjoy hiking in my free time."
+    "user_description": "I'm Nadia Mendoza, a passionate software engineer who finds fulfillment in the world of coding and problem-solving. With each line of code, I strive to create elegant and efficient solutions that make a positive impact. When I'm not immersed in the digital realm, you'll often find me exploring the great outdoors and indulging in my love for hiking. Nature's beauty and serenity rejuvenate my spirit, and I enjoy the challenge of conquering new trails and experiencing the wonders of the natural world. Let's connect and share our love for technology and the great outdoors, and maybe even embark on thrilling adventures together!"
     },
     {
-    "username": "ndutta",
-    "email": "ndutta@example.com",
-    "password": "password123",
-    "fname": "Nita",
-    "lname": "Dutta",
+    "username": "indirad",
+    "email": "ipalluri@example.com",
+    "password": "password",
+    "fname": "Indira",
+    "lname": "Alluri",
     "address_id": 7,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "My name is Nita, and I'm a seamstress from Mumbai. I specialize in creating traditional Indian clothing, but I also enjoy designing modern outfits with a cultural twist."
+    "user_image_path": "/static/images/user6.png",
+    "user_description": "My name is Indira, and I proudly call Mumbai my home. As a skilled fashion designer, I specialize in creating exquisite traditional Indian clothing that reflects the rich heritage of our culture. However, I also find immense joy in infusing modern elements into my designs, giving them a contemporary edge with a cultural twist. With a keen eye for detail and a passion for blending tradition and innovation, I strive to create unique and captivating outfits that celebrate our vibrant heritage. Let's connect and embark on a journey of fashion, where tradition meets modernity in the most beautiful and creative ways."
     },
     {
-    "username": "mlim",
-    "email": "mlim@example.com",
-    "password": "password123",
-    "fname": "Min",
-    "lname": "Lim",
+    "username": "feiLi",
+    "email": "feilei@example.com",
+    "password": "password",
+    "fname": "Fei Fei",
+    "lname": "Li",
     "address_id": 8,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a waitress in a cafe. I moved here from Seoul, South Korea 5 years ago."
+    "user_image_path": "/static/images/user8",
+    "user_description": "With a dream in my heart and a passion for brewing, I'm on a mission to start my own brewery. Five years ago, I left Seoul, South Korea behind to pursue my dream in this new city. Inspired by the artistry of craft beer, I envision creating unique and flavorful brews that captivate the taste buds and bring people together. Join me on this exciting journey as I blend my Korean roots with the diverse brewing culture of this city, crafting a fusion of flavors that will leave a lasting impression. Let's raise a glass to dreams realized and new friendships forged over the love of great beer!"
     },
     {
-    "username": "jlee",
-    "email": "jlee@example.com",
+    "username": "jcmalak",
+    "email": "jmalak@email.com",
     "password": "password123",
     "fname": "Jamie",
-    "lname": "Lee",
+    "lname": "Curtis Malak",
     "address_id": 9,
-    "user_image_path": "/static/images/user_profile_stock.png",
-    "user_description": "I am a recent graduate with a degree in finance and am currently job hunting."
+    "user_image_path": "/static/images/user9.png",
+    "user_description": "Hailing from the captivating land of Egypt, I am a recent finance graduate, eager to embark on a promising career path. Armed with a degree in finance, I possess a solid understanding of the intricacies of the financial world. Currently, I find myself on an exciting job hunt, searching for opportunities that will allow me to apply my knowledge and contribute to the dynamic realm of finance. With determination in my heart and a hunger for professional growth, I am ready to seize the right opportunity and make a meaningful impact in the financial industry. Let's connect and explore the possibilities together, as I navigate this exciting chapter in my career journey."
     }
     ]
     
