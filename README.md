@@ -33,21 +33,21 @@ ____________________________
 <dl>
 <dt>Features</dt>
 
-<dd> Users can easily Sign up for an account and log in to their user dashboard </dd>
+<dt> Users can easily Sign up for an account and log in to their user dashboard </dd>
 
 <img src="/static/gifs/Log_in.gif" 
-alt="IMAGE ALT TEXT HERE" width="340" height="280" border="10" /></img>
+alt="IMAGE ALT TEXT HERE" width="440" height="380" border="10" /></img>
 
-<dd> From the  dashboard users can update their existing profiles and update their image to personalized image to replace the default image </dd>
+<dt> From the  dashboard users can update their existing profiles and update their image to personalized image to replace the default image </dd>
 
 <img src="/static/gifs/updateimage.gif" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
 
-<dd> Logged in users can view all activities and subscribe and unsubscribe from specific activities 
+<dt> Users can view all activities and subscribe and unsubscribe from specific activities </dd>
 <img src="/static/gifs/subscribe.gif" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
 
-<dd> Logged in users can send messages to other users regarding specific activities 
+<dt> Logged in users can send messages to other users regarding specific activities </dd        >
 
 <img src="/static/gifs/messages.gif" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
