@@ -1,63 +1,96 @@
-<dl> 
-    <h1>TRIBE CONNECT </h1>
-    <h2> Where you build your tribe, one connection at a time! </h2>
-</dl>
+# TRIBE CONNECT
 
-____________________________
+## Build Your Tribe, One Connection at a Time!
 
+---
 
-<dl> 
-    <h3> Project description <h3>
-    <div>
-    <h4>Tribe Connect is a web app that aims at taking the challenge out of making friends and building a community. 
-On Tribe Connect's homepage visitors can explore community activities created by other members. 
-Signing up is simple, generating a new User account stored securely in the database. 
-Tribe Connect empowers users to create activities and associate images. 
-In the absence of user-provided images, default images are displayed.
-Users can conveniently access their user dashboard to edit their profile, create a new activities as well as view other</h4>
-    </div>
-    <div>
-<h4>Activities created by users are available for other members to subscribe to and unsubscribe from. 
-Users are also able to connect with every user that creates the activity by messaging them.</h4>
-    </div>
-</dl>
+### Project Description
 
-____________________________
+Tribe Connect is a web app that simplifies the process of making friends and building a community. On Tribe Connect's homepage, visitors can explore various community activities created by its members. Signing up is a breeze, as it generates a new user account securely stored in the database. Tribe Connect empowers users to create activities and associate images. In cases where users don't provide images, default ones are displayed. The user dashboard allows easy access for editing profiles, creating new activities, and browsing activities created by other users. Activities created by users are open for subscription, and users can also unsubscribe as needed. Additionally, users can connect with activity creators by sending them direct messages.
 
-<dl> 
-    <h3>Tech stack</h3>
-    <dt>Frontend:<dt>
-    <dd>HTML, CSS,  Bootstrap, Javascript, REACT, Jinja2</dd>
-    <dt>Backend: </dt>
-    <dd>Python, Flask, PostgreSQL, SQLAlchemy</dd>
-    <dt>API: 
-    <dd>Cloudinary</dd>
+---
 
-</dl>
+### Tech Stack
 
-____________________________
+#### Frontend:
 
-<dl>
-<h3>Features</h3>
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- React
+- Jinja2
 
-<dt> Users can easily Sign up for an account and log in to their user dashboard </dt>
+#### Backend:
 
-<img src="/static/gifs/Log_in.gif" 
-alt="IMAGE ALT TEXT HERE" width="440" height="380" border="10" /></img>
+- Python
+- Flask
+- PostgreSQL
+- SQLAlchemy
 
-<dt> From the  dashboard users can update their existing profiles and update their image to personalized image to replace the default image </dd>
+#### API:
 
-<img src="/static/gifs/updateimage.gif" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
+- Cloudinary
 
-<dt> Users can view all activities and subscribe and unsubscribe from specific activities </dt>
-<img src="/static/gifs/subscribe.gif" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
+---
 
-<dt> Logged in users can send messages to other users regarding specific activities </dt>
+### Features
 
-<img src="/static/gifs/messages.gif" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
+#### Easy User Log In, Sign Up, Log Out
 
+Users can effortlessly log in to their accounts, granting them access to the user dashboard. From there, they can edit their profiles, create new activities, and view the activities they are hosting or subscribed to.
 
-</dl>
+![Log In GIF](/static/gifs/log_in.gif)
+
+#### Update Profile and Activity Feature
+
+Users can easily update their existing profiles and personalize their images by replacing the default ones. These changes can be made directly from the user dashboard.
+
+![Update Image and Profile GIF](/static/gifs/updateimage.gif)
+
+#### Subscribe and Unsubscribe from Activities
+
+Users have the flexibility to explore all activities and choose which ones they want to subscribe to. They can also unsubscribe from activities they are no longer interested in.
+
+![Subscribe GIF](/static/gifs/subscribe.gif)
+
+#### Messaging Activity Host
+
+Logged-in users can communicate with activity hosts by sending messages directly through the web app. This feature enables seamless coordination and interaction among users.
+
+![Messages GIF](/static/gifs/messages.gif)
+
+#### Filter by Activity Type
+
+To streamline the activity browsing experience, users can filter activities based on their preferred activity types. By simply clicking on the desired type, users can quickly find activities that match their interests.
+
+![Filter GIF](/static/gifs/filter.gif)
+
+---
+
+### Run the Tribe Connect Flask App
+
+1. Set up and activate a Python virtual environment and install all dependencies:
+    ```
+    virtualenv env
+    source env/bin/activate
+    pip3 install -r requirements.txt
+    ```
+
+2. To source Cloudinary:
+    ```
+    source secret.sh
+    ```
+
+3. To create the database and populate it with sample data, run:
+    ```
+    python3 seed_database.py
+    ```
+
+4. Start the Flask server:
+    ```
+    python3 server.py
+    ```
+
+5. Open your browser and go to `localhost:5000` to access the web app.
+
