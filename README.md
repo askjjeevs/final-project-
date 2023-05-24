@@ -2,7 +2,10 @@
     <dt>TRIBE CONNECT </dt>
     <dd> where you build your tribe, one connection at a time! </dd>
 </dl>
-_______________________________
+
+____________________________
+
+
 <dl> Project description:
     <dt>Tribe Connect is a web app that aims at taking the challenge out of making friends and building a community. 
 On Tribe Connect's homepage visitors can explore community activities created by other members. 
@@ -14,7 +17,8 @@ Users can conveniently access their user dashboard to edit their profile, create
 <dd>Activities created by users are available for other members to subscribe to and unsubscribe from. 
 Users are also able to connect with every user that creates the activity by messaging them.</dd>
 </dl>
-_____________________________
+
+____________________________
 
 <dl> Tech stack
 
