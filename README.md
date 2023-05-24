@@ -1,5 +1,5 @@
 <dl> 
-    <dt>TRIBE CONNECT </dt>
+    <h1>TRIBE CONNECT </h1>
     <dd> where you build your tribe, one connection at a time! </dd>
 </dl>
 
@@ -36,7 +36,7 @@ ____________________________
 <dd> Users can easily Sign up for an account and log in to their user dashboard </dd>
 
 <img src="/static/gifs/Log_in.gif" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></img>
+alt="IMAGE ALT TEXT HERE" width="340" height="280" border="10" /></img>
 
 <dd> From the  dashboard users can update their existing profiles and update their image to personalized image to replace the default image </dd>
 
